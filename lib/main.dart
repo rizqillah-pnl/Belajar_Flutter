@@ -47,8 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center,
             ),
             RaisedButton(
-              child: Icon(Icons.remove),
-              onPressed: _incrementCounter,
+              child: Text('Reset'),
+              onPressed: reset,
             ),
           ],
         ),
