@@ -8,40 +8,120 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> widgets = [];
-  int counter = 1;
-
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("RIZQILLAH / 1957301020")),
+        appBar: AppBar(
+          title: Text('List View & Text Style'),
+        ),
         body: ListView(
+          padding: EdgeInsets.all(10.0),
           children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
-              RaisedButton(
-                  child: Text("Tambah Data"),
-                  onPressed: () {
-                    setState(() {
-                      widgets.add(Text("Data ke-" + counter.toString(), style: TextStyle(fontSize: 35)));
-                      counter++;
-                    });
-                  }),
-              RaisedButton(
-                  child: Text("Hapus Data"),
-                  onPressed: () {
-                    setState(() {
-                      if (counter != 1) {
-                        widgets.removeLast();
-                        counter--;
-                      }
-                    });
-                  }),
-            ]),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widgets,
+            Container(
+              height: 60,
+              color: Colors.blue,
+              child: Center(
+                child: Text("List View Flutter"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[400],
+              child: Center(
+                child: Text("Text Style Flutter 1"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[300],
+              child: Center(
+                child: Text("Text Style Flutter 2"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[200],
+              child: Center(
+                child: Text("Text Style Flutter 3"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 4"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 5"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 6"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[400],
+              child: Center(
+                child: Text("Text Style Flutter 7"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[300],
+              child: Center(
+                child: Text("Text Style Flutter 8"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[200],
+              child: Center(
+                child: Text("Text Style Flutter 9"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 10"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 11"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 12"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 13"),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.blue[100],
+              child: Center(
+                child: Text("Text Style Flutter 14"),
+              ),
             ),
           ],
         ),
