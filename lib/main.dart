@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 40),
               textAlign: TextAlign.center,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Reset'),
               onPressed: reset,
             ),
