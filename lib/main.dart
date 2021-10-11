@@ -8,19 +8,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int angka = 0;
-
-  void pushButton() {
-    setState(() {
-      angka += 1;
-    });
-  }
-
-  void reset() {
-    setState(() {
-      angka = 0;
-    });
-  }
+  List<Widget> widgets = [];
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +17,33 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("RIZQILLAH / 1957301020")),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(angka.toString(), style: TextStyle(fontSize: 10 + angka.toDouble())),
+        body: ListView(
+          children: <Widget>[
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
               RaisedButton(
-                child: Text("Tambah Angka"),
-                onPressed: pushButton,
-              ),
+                  child: Text("Tambah Data"),
+                  onPressed: () {
+                    setState(() {
+                      widgets.add(Text("Data ke-" + counter.toString(), style: TextStyle(fontSize: 35)));
+                      counter++;
+                    });
+                  }),
               RaisedButton(
-                child: Text("Reset"),
-                onPressed: reset,
-              )
-            ],
-          ),
+                  child: Text("Hapus Data"),
+                  onPressed: () {
+                    setState(() {
+                      if (counter != 1) {
+                        widgets.removeLast();
+                        counter--;
+                      }
+                    });
+                  }),
+            ]),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widgets,
+            ),
+          ],
         ),
       ),
     );
