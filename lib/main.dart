@@ -29,14 +29,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BelajarFlutter.com'),
+        title: Text('Coba-coba'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Buku yang dibaca : $_jumlahBuku',
+              'Angka : $_jumlahBuku',
               style: TextStyle(fontSize: 40),
               textAlign: TextAlign.center,
             ),
