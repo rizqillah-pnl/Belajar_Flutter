@@ -25,6 +25,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void reset() {
+    setState(() {
+      _jumlahBuku = 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
               'Angka : $_jumlahBuku',
               style: TextStyle(fontSize: 40),
               textAlign: TextAlign.center,
+            ),
+            RaisedButton(
+              child: Icon(Icons.remove),
+              onPressed: _incrementCounter,
             ),
           ],
         ),
