@@ -28,8 +28,8 @@ class _MyAppState extends State<MyApp> {
             child: AnimatedContainer(
               color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)),
               duration: Duration(seconds: 1),
-              width: 50.0 + random.nextInt(120),
-              height: 50.0 + random.nextInt(120),
+              width: 80.0 + random.nextInt(120),
+              height: 80.0 + random.nextInt(120),
             ),
           ),
         ),
