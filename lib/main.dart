@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
         body: ListView(
           children: <Widget>[
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Tambah Data"),
                   onPressed: () {
                     setState(() {
@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
                       counter++;
                     });
                   }),
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Hapus Data"),
                   onPressed: () {
                     setState(() {
