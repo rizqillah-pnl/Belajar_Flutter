@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Text(
             "Belajar Text Style.",
-            style: TextStyle(fontFamily: "CrashLandingBB", fontSize: 45, decorationColor: Colors.red, decorationThickness: 3, decorationStyle: TextDecorationStyle.wavy),
+            style: TextStyle(fontFamily: "CrashLandingBB", fontSize: 45, decoration: TextDecoration.overline, decorationColor: Colors.red, decorationThickness: 3, decorationStyle: TextDecorationStyle.wavy),
           ),
         ),
       ),
