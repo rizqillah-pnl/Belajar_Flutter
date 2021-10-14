@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -9,28 +8,42 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Random random = Random();
+  List<Widget> widgets = [];
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020"),
-          backgroundColor: Colors.red,
-        ),
-        body: Center(
-          child: GestureDetector(
-            onTap: () {
-              setState(() {});
-            },
-            child: AnimatedContainer(
-              color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)),
-              duration: Duration(seconds: 1),
-              width: 50.0 + random.nextInt(101),
-              height: 50.0 + random.nextInt(101),
+        appBar: AppBar(title: Text("RIZQILLAH / 1957301020")),
+        body: ListView(
+          children: <Widget>[
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
+              RaisedButton(
+                  child: Text("Tambah Data"),
+                  onPressed: () {
+                    setState(() {
+                      widgets.add(Text("Data ke-" + counter.toString(), style: TextStyle(fontSize: 35)));
+                      counter++;
+                    });
+                  }),
+              RaisedButton(
+                  child: Text("Hapus Data"),
+                  onPressed: () {
+                    setState(() {
+                      if (counter != 1) {
+                        widgets.removeLast();
+                        counter--;
+                      }
+                    });
+                  }),
+            ]),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widgets,
             ),
-          ),
+          ],
         ),
       ),
     );
