@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Text(
             "Belajar Text Style.",
-            style: TextStyle(fontFamily: "CrashLandingBB"),
+            style: TextStyle(fontFamily: "CrashLandingBB", fontSize: 40),
           ),
         ),
       ),
