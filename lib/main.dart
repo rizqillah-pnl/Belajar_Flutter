@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -8,43 +9,29 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> widgets = [];
-  int counter = 1;
+  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("RIZQILLAH / 1957301020")),
-        body: ListView(
-          children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
-              ElevatedButton(
-                  child: Text("Tambah Data"),
-                  onPressed: () {
-                    setState(() {
-                      widgets.add(Text("Data ke-" + counter.toString(), style: TextStyle(fontSize: 35)));
-                      counter++;
-                    });
-                  }),
-              ElevatedButton(
-                  child: Text("Hapus Data"),
-                  onPressed: () {
-                    setState(() {
-                      if (counter != 1) {
-                        widgets.removeLast();
-                        counter--;
-                      }
-                    });
-                  }),
-            ]),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widgets,
+        appBar: AppBar(
+          title: Text("RIZQILLAH / 1957301020"),
+          backgroundColor: Colors.red,
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {});
+            },
+            child: AnimatedContainer(
+              color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)),
+              duration: Duration(seconds: 1),
+              width: 80.0 + random.nextInt(120),
+              height: 80.0 + random.nextInt(120),
             ),
-          ],
+          ),
         ),
       ),
     );
