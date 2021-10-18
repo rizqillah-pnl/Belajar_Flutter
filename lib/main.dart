@@ -11,11 +11,27 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("RIZQILLAH / 1957301020"),
         ),
-        body: Center(
-          child: Text(
-            "Belajar Text Style.",
-            style: TextStyle(fontFamily: "CrashLandingBB", fontSize: 45, decoration: TextDecoration.overline, decorationColor: Colors.red, decorationThickness: 4, decorationStyle: TextDecorationStyle.dashed),
-          ),
+        body: Column(
+          children: [
+            Container(
+              color: Colors.greenAccent,
+              child: FlutterLogo(
+                size: 60.0,
+              ),
+            ),
+            Container(
+              color: Colors.orangeAccent,
+              child: FlutterLogo(
+                size: 60.0,
+              ),
+            ),
+            Container(
+              color: Colors.purpleAccent,
+              child: FlutterLogo(
+                size: 60.0,
+              ),
+            ),
+          ],
         ),
       ),
     );
