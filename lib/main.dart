@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("RIZQILLAH / 1957301020"),
         ),
-        body: Column(
+        body: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
