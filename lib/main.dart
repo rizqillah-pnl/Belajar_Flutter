@@ -25,12 +25,6 @@ class MyApp extends StatelessWidget {
                 size: 60.0,
               ),
             ),
-            Container(
-              color: Colors.purpleAccent,
-              child: FlutterLogo(
-                size: 60.0,
-              ),
-            ),
           ],
         ),
       ),
