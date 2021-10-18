@@ -23,6 +23,18 @@ class MyApp extends StatelessWidget {
                     size: 60.0,
                   ),
                 ),
+                Container(
+                  color: Colors.greenAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+                Container(
+                  color: Colors.greenAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
               ],
             ),
             Row(
@@ -33,33 +45,6 @@ class MyApp extends StatelessWidget {
                   child: FlutterLogo(
                     size: 60.0,
                   ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      color: Colors.greenAccent,
-                      child: FlutterLogo(
-                        size: 60.0,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      color: Colors.greenAccent,
-                      child: FlutterLogo(
-                        size: 60.0,
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
