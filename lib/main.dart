@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
           title: Text("RIZQILLAH / 1957301020"),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
