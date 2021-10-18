@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   color: Colors.greenAccent,
