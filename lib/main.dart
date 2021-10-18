@@ -12,18 +12,18 @@ class MyApp extends StatelessWidget {
           title: Text("RIZQILLAH / 1957301020"),
         ),
         body: Column(
-          children: [
-            Container(
-              color: Colors.greenAccent,
-              child: FlutterLogo(
-                size: 60.0,
-              ),
-            ),
-            Container(
-              color: Colors.orangeAccent,
-              child: FlutterLogo(
-                size: 60.0,
-              ),
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  color: Colors.greenAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
