@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
           title: Text("RIZQILLAH / 1957301020"),
         ),
         body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   color: Colors.greenAccent,
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
                   color: Colors.greenAccent,
