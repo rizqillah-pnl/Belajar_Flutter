@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
