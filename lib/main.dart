@@ -25,6 +25,17 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  color: Colors.greenAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
