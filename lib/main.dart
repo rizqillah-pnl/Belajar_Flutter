@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
                   height: 50,
                   child: Material(
                     color: Colors.red,
+                    shape: StadiumBorder(),
                   ),
                 ),
               ],
