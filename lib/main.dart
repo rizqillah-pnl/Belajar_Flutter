@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 Draggable<Color>(
-                  data: color1,
+                  data: color2,
                   child: SizedBox(
                     width: 50,
                     height: 50,
