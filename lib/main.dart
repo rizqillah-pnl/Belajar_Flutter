@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
                 width: 200,
                 height: 200,
                 padding: EdgeInsets.all(3),
-                margin: EdgeInsets.only(bottom: 20)
+                margin: EdgeInsets.only(bottom: 20),
                 child: Image(
                   image: NetworkImage(
                     "https://avatars.githubusercontent.com/u/71523218?v=4",
