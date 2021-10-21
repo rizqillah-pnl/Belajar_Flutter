@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("RIZQILLAH / 1957301020"),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.green,
         ),
         body: Column(
           children: <Widget>[
