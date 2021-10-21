@@ -43,14 +43,13 @@ class _MyAppState extends State<MyApp> {
                     child: Material(
                       color: Colors.black26,
                       shape: StadiumBorder(),
-                      elevation: 3,
                     ),
                   ),
                   feedback: SizedBox(
                     width: 50,
                     height: 50,
                     child: Material(
-                      color: color1.withOpacity(0.5),
+                      color: color1.withOpacity(0.7),
                       shape: StadiumBorder(),
                       elevation: 3,
                     ),
