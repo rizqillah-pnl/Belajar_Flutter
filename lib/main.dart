@@ -18,8 +18,10 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.blue,
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 SizedBox(
                   width: 50,
