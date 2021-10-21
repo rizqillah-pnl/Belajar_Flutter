@@ -14,50 +14,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.green,
         ),
         body: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.red,
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.green,
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.purple,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Flexible(
-              flex: 2,
-              child: Container(
-                margin: EdgeInsets.all(5),
-                color: Colors.amber,
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                margin: EdgeInsets.all(5),
-                color: Colors.blue,
-              ),
-            ),
-          ],
+          children: <Widget>[],
         ),
       ),
     );
