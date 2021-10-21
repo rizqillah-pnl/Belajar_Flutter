@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - Flexible Layout"),
+          title: Text("RIZQILLAH / 1957301020 - Image"),
           backgroundColor: Colors.green,
         ),
         body: Center(
