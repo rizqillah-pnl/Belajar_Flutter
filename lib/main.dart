@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
               image: NetworkImage(
                 "https://avatars.githubusercontent.com/u/71523218?v=4",
               ),
+              fit: BoxFit.contain,
             ),
           ),
         ),
