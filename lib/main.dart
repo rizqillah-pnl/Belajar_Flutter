@@ -8,6 +8,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Color color1 = Colors.red;
+  Color color2 = Colors.amber;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,13 +26,34 @@ class _MyAppState extends State<MyApp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Material(
-                    color: Colors.red,
-                    shape: StadiumBorder(),
-                    elevation: 3,
+                Draggable<Color>(
+                  data: color1,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1.withOpacity(0.5),
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
                   ),
                 ),
               ],
