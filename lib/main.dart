@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
                       foregroundDecoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
-                              "https://pixnio.com/free-images/2018/11/12/2018-11-12-14-02-38-1200x800.jpg.",
+                              "https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png",
                             ),
                             fit: BoxFit.fill),
                       ),
