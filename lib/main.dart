@@ -22,18 +22,21 @@ class MyApp extends StatelessWidget {
                   Flexible(
                     flex: 2,
                     child: Container(
+                      margin: EdgeInsets.all(5),
                       color: Colors.red,
                     ),
                   ),
                   Flexible(
                     flex: 2,
                     child: Container(
+                      margin: EdgeInsets.all(5),
                       color: Colors.green,
                     ),
                   ),
                   Flexible(
                     flex: 2,
                     child: Container(
+                      margin: EdgeInsets.all(5),
                       color: Colors.purple,
                     ),
                   ),
@@ -43,12 +46,14 @@ class MyApp extends StatelessWidget {
             Flexible(
               flex: 2,
               child: Container(
+                margin: EdgeInsets.all(5),
                 color: Colors.amber,
               ),
             ),
             Flexible(
               flex: 1,
               child: Container(
+                margin: EdgeInsets.all(5),
                 color: Colors.blue,
               ),
             ),
