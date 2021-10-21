@@ -33,9 +33,7 @@ class MyApp extends StatelessWidget {
                 height: 200,
                 padding: EdgeInsets.all(3),
                 child: Image(
-                  image: AssetImage(
-                    "assets/image/logo.png",
-                  ),
+                  image: AssetImage('assets/images/logo.png'),
                   fit: BoxFit.contain,
                 ),
               ),
