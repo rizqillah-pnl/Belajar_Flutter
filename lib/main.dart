@@ -1,37 +1,99 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Random random = Random();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("RIZQILLAH / 1957301020"),
           backgroundColor: Colors.red,
         ),
-        body: Center(
-          child: GestureDetector(
-            onTap: () {
-              setState(() {});
-            },
-            child: AnimatedContainer(
-              color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)),
-              duration: Duration(seconds: 1),
-              width: 80.0 + random.nextInt(120),
-              height: 80.0 + random.nextInt(120),
+        body: Column(
+          children: <Widget>[
+            Flexible(
+              flex: 1,
+              child: Row(
+                children: <Widget>[
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.pink,
+                      foregroundDecoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              "https://i.ytimg.com/vi/5cjWMAAbJPI/hqdefault.jpg",
+                            ),
+                            fit: BoxFit.fill),
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      color: Colors.pink[100],
+                      foregroundDecoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              "https://i.ytimg.com/vi/QZAc1hT1vdg/hqdefault.jpg",
+                            ),
+                            fit: BoxFit.fill),
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      color: Colors.pink[300],
+                      foregroundDecoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              "https://pixnio.com/free-images/2018/11/12/2018-11-12-14-02-38-1200x800.jpg.",
+                            ),
+                            fit: BoxFit.fill),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.amber[200],
+                  borderRadius: BorderRadius.circular(40),
+                  image: DecorationImage(image: AssetImage('assets/images/logo.png'), fit: BoxFit.fill),
+                ),
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Container(
+                color: Colors.blueGrey,
+                child: Row(
+                  children: <Widget>[
+                    Flexible(
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    Spacer(
+                      flex: 2,
+                    ),
+                    Flexible(
+                      child: Container(
+                        color: Colors.red[300],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
