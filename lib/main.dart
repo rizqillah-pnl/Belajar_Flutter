@@ -15,7 +15,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("RIZQILLAH / 1957301020 - Draggable"),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blue,
         ),
         body: Column(
           children: <Widget>[
