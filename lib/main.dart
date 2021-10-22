@@ -25,9 +25,12 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
+                onChanged: (value) {
+                  setState(() {});
+                },
                 controller: controller,
               ),
-              Text('Data')
+              Text(controller.text)
             ],
           ),
         ),
