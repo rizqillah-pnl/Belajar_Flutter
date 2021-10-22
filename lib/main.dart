@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                 ),
                 maxLength: 10,
                 obscureText: true,
