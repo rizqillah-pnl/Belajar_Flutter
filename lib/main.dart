@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
+                obscureText: true,
                 onChanged: (value) {
                   setState(() {});
                 },
