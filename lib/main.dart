@@ -26,8 +26,9 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
-                  icon: Icon(Icons.adb),
+                  // icon: Icon(Icons.adb),
                   prefixIcon: Icon(Icons.person),
+                  prefixText: 'Username : ',
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 ),
                 maxLength: 10,
