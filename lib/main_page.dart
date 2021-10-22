@@ -8,7 +8,7 @@ class MainPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('RIZQILLAH / 1957301020'),
+          title: Text('RIZQILLAH / 1957301020 - MAIN'),
           backgroundColor: Colors.red,
         ),
         body: Center(

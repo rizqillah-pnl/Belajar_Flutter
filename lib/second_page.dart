@@ -8,7 +8,7 @@ class SecondPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('RIZQILLAH / 1957301020'),
+          title: Text('RIZQILLAH / 1957301020 - SECOND'),
           backgroundColor: Colors.red,
         ),
         body: Center(
