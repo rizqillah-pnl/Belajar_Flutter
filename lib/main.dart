@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               Card(
+                elevation: 5,
                 child: Row(
                   children: <Widget>[
                     Container(margin: EdgeInsets.all(5), child: Icon(Icons.account_box)),
