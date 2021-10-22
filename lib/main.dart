@@ -19,14 +19,17 @@ class _MyAppState extends State<MyApp> {
           title: Text("RIZQILLAH / 1957301020 - Draggable"),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            TextField(
-              controller: controller,
-            ),
-            Text('Data')
-          ],
+        body: Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              TextField(
+                controller: controller,
+              ),
+              Text('Data')
+            ],
+          ),
         ),
       ),
     );
