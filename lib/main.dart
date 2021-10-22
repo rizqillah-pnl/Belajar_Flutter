@@ -27,10 +27,20 @@ class _MyAppState extends State<MyApp> {
               TextField(
                 decoration: InputDecoration(
                   // icon: Icon(Icons.adb),
+                  suffix: Container(
+                    width: 5,
+                    height: 5,
+                    color: Colors.red,
+                  ),
                   prefixIcon: Icon(Icons.person),
                   // prefixText: 'Username : ',
-                  prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
+                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
                   labelText: 'Nama Lengkap',
+                  // labelStyle: TextStyle(),
+                  hintText: "Nama Lengkapnya loh...",
+                  hintStyle: TextStyle(
+                    fontSize: 12,
+                  ),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 ),
                 maxLength: 10,
