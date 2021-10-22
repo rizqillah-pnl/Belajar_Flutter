@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
               Card(
                 child: Row(
                   children: <Widget>[
-                    Icon(Icons.account_box),
+                    Container(margin: EdgeInsets.all(5), child: Icon(Icons.account_box)),
                     Text("Account Box"),
                   ],
                 ),
