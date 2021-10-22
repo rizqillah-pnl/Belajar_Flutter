@@ -27,7 +27,9 @@ class _MyAppState extends State<MyApp> {
               TextField(
                 decoration: InputDecoration(
                   // icon: Icon(Icons.adb),
-                  prefix: Container(
+                  fillColor: Colors.lightBlue,
+                  filled: true,
+                  suffix: Container(
                     width: 5,
                     height: 5,
                     color: Colors.red,
