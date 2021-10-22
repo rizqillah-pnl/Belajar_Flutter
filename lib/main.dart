@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
                 decoration: InputDecoration(
                   // icon: Icon(Icons.adb),
                   prefixIcon: Icon(Icons.person),
-                  prefixText: 'Username : ',
+                  // prefixText: 'Username : ',
                   prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
                   labelText: 'Nama Lengkap',
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
