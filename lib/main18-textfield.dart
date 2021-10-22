@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - TextField 2"),
+          title: Text("RIZQILLAH / 1957301020 - TextField"),
           backgroundColor: Colors.blue,
         ),
         body: Container(
@@ -25,9 +25,6 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
                 maxLength: 10,
                 obscureText: true,
                 onChanged: (value) {
