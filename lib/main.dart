@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               buildCard(Icons.account_box, 'Account Box'),
-              buildCard(Icons.adb, 'Android'),
+              buildCard(Icons.adb, 'Serangga Android'),
             ],
           ),
         ),
@@ -28,7 +28,7 @@ Card buildCard(IconData iconData, String text) {
     elevation: 5,
     child: Row(
       children: <Widget>[
-        Container(margin: EdgeInsets.all(5), child: Icon(iconData)),
+        Container(margin: EdgeInsets.all(5), child: Icon(iconData, color: Colors.green)),
         Text(text),
       ],
     ),
