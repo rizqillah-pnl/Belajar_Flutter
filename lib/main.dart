@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - Draggable"),
+          title: Text("RIZQILLAH / 1957301020 - TextField"),
           backgroundColor: Colors.blue,
         ),
         body: Container(
