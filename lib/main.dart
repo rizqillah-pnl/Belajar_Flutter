@@ -28,7 +28,7 @@ Card buildCard(IconData iconData, String text) {
     elevation: 5,
     child: Row(
       children: <Widget>[
-        Container(margin: EdgeInsets.all(5), child: Icon(iconData, color: Colors.green)),
+        Container(margin: EdgeInsets.all(5), child: Icon(iconData, color: Colors.blue)),
         Text(text),
       ],
     ),
