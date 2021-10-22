@@ -11,7 +11,18 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.green,
         body: Container(
           margin: EdgeInsets.all(10),
-          child: ListView(),
+          child: ListView(
+            children: <Widget>[
+              Card(
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.account_box),
+                    Text("Account Box"),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
