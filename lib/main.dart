@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
               TextField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.adb),
+                  prefixIcon: Icon(Icons.person),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 ),
                 maxLength: 10,
