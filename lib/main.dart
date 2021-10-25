@@ -1,60 +1,63 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - TextField 2"),
-          backgroundColor: Colors.blue,
+          title: Text("RIZQILLAH / 1957301020 - Flexible Layout"),
+          backgroundColor: Colors.green,
         ),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.adb),
-                  // fillColor: Colors.lightBlue[50],
-                  // filled: true,
-                  suffix: Container(
-                    width: 5,
-                    height: 5,
-                    color: Colors.red,
+        body: Column(
+          children: <Widget>[
+            Flexible(
+              flex: 1,
+              child: Row(
+                children: <Widget>[
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      color: Colors.red,
+                    ),
                   ),
-                  prefixIcon: Icon(Icons.person),
-                  // prefixText: 'Username : ',
-                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-                  labelText: 'Nama Lengkap',
-                  // labelStyle: TextStyle(),
-                  hintText: "Nama Lengkapnya loh...",
-                  hintStyle: TextStyle(
-                    fontSize: 12,
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      color: Colors.green,
+                    ),
                   ),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                ),
-                maxLength: 10,
-                obscureText: true,
-                onChanged: (value) {
-                  setState(() {});
-                },
-                controller: controller,
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      color: Colors.purple,
+                    ),
+                  ),
+                ],
               ),
-              Text(controller.text)
-            ],
-          ),
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                margin: EdgeInsets.all(5),
+                color: Colors.amber,
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Container(
+                margin: EdgeInsets.all(5),
+                color: Colors.blue,
+              ),
+            ),
+          ],
         ),
       ),
     );
