@@ -8,7 +8,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController();
+  Color color1 = Colors.red;
+  Color color2 = Colors.amber;
+  Color targetColor;
+  bool isAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,45 +19,116 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - TextField 2"),
+          title: Text("RIZQILLAH / 1957301020 - Draggable"),
           backgroundColor: Colors.blue,
         ),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.adb),
-                  // fillColor: Colors.lightBlue[50],
-                  // filled: true,
-                  suffix: Container(
-                    width: 5,
-                    height: 5,
-                    color: Colors.red,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                ElevatedButton(
+                    child: Text("Tambah Data"),
+                    onPressed: () {
+                      setState(() {
+                        SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Material(
+                            color: Colors.black26,
+                            shape: StadiumBorder(),
+                          ),
+                        );
+                      });
+                    }),
+                Draggable<Color>(
+                  data: color1,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
                   ),
-                  prefixIcon: Icon(Icons.person),
-                  // prefixText: 'Username : ',
-                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-                  labelText: 'Nama Lengkap',
-                  // labelStyle: TextStyle(),
-                  hintText: "Nama Lengkapnya loh...",
-                  hintStyle: TextStyle(
-                    fontSize: 12,
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
+                    ),
                   ),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
                 ),
-                maxLength: 10,
-                obscureText: true,
-                onChanged: (value) {
-                  setState(() {});
-                },
-                controller: controller,
-              ),
-              Text(controller.text)
-            ],
-          ),
+                Draggable<Color>(
+                  data: color2,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
+                    ),
+                  ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            DragTarget<Color>(
+              onWillAccept: (value) => true,
+              onAccept: (value) {
+                isAccepted = true;
+                targetColor = value;
+              },
+              builder: (context, candidates, rejected) {
+                return (isAccepted)
+                    ? SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: targetColor,
+                          shape: StadiumBorder(),
+                        ),
+                      )
+                    : SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                        ),
+                      );
+              },
+            ),
+          ],
         ),
       ),
     );
