@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               TextField(
                 maxLength: 10,
-                obscureText: true,
+                obscureText: false,
                 onChanged: (value) {
                   setState(() {});
                 },
