@@ -2,98 +2,118 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color color1 = Colors.red;
+  Color color2 = Colors.amber;
+  Color targetColor;
+  bool isAccepted = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020"),
-          backgroundColor: Colors.red,
+          title: Text("RIZQILLAH / 1957301020 - Draggable"),
+          backgroundColor: Colors.blue,
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.pink,
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://i.ytimg.com/vi/5cjWMAAbJPI/hqdefault.jpg",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Draggable<Color>(
+                  data: color1,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1,
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.pink[100],
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://i.ytimg.com/vi/QZAc1hT1vdg/hqdefault.jpg",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.pink[300],
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://avatars.githubusercontent.com/u/71523218?v=4",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
                   ),
-                ],
-              ),
-            ),
-            Flexible(
-              flex: 2,
-              child: Container(
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.amber[200],
-                  borderRadius: BorderRadius.circular(40),
-                  image: DecorationImage(image: AssetImage('assets/images/logo.png'), fit: BoxFit.fill),
                 ),
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                color: Colors.blueGrey,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                      child: Container(
-                        color: Colors.yellow,
-                      ),
+                Draggable<Color>(
+                  data: color2,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2,
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
-                    Spacer(
-                      flex: 2,
+                  ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
                     ),
-                    Flexible(
-                      child: Container(
-                        color: Colors.red[300],
-                      ),
+                  ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            )
+              ],
+            ),
+            DragTarget<Color>(
+              onWillAccept: (value) => true,
+              onAccept: (value) {
+                isAccepted = true;
+                targetColor = value;
+              },
+              builder: (context, candidates, rejected) {
+                return (isAccepted)
+                    ? SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: targetColor,
+                          shape: StadiumBorder(),
+                        ),
+                      )
+                    : SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                        ),
+                      );
+              },
+            ),
           ],
         ),
       ),
