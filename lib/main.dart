@@ -28,20 +28,6 @@ class _MyAppState extends State<MyApp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                ElevatedButton(
-                    child: Text("Tambah Data"),
-                    onPressed: () {
-                      setState(() {
-                        SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Material(
-                            color: Colors.black26,
-                            shape: StadiumBorder(),
-                          ),
-                        );
-                      });
-                    }),
                 Draggable<Color>(
                   data: color1,
                   child: SizedBox(
