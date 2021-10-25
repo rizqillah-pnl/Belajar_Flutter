@@ -90,6 +90,10 @@ class _MyAppState extends State<MyApp> {
             ),
             DragTarget<Color>(
               onWillAccept: (value) => true,
+              onLeave: (value) {
+                isAccepted = false;
+                targetColor = null;
+              },
               onAccept: (value) {
                 isAccepted = true;
                 targetColor = value;
