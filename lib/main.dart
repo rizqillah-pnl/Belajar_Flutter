@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
                   // icon: Icon(Icons.adb),
                   // fillColor: Colors.lightBlue[50],
                   // filled: true,
-                  prefix: Container(
+                  suffix: Container(
                     width: 5,
                     height: 5,
                     color: Colors.red,
