@@ -2,59 +2,117 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color color1 = Colors.red;
+  Color color2 = Colors.amber;
+  Color targetColor;
+  bool isAccepted = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - Flexible Layout"),
-          backgroundColor: Colors.green,
+          title: Text("RIZQILLAH / 1957301020 - Draggable"),
+          backgroundColor: Colors.blue,
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.red,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Draggable<Color>(
+                  data: color1,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1,
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.green,
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      color: Colors.purple,
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color1.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
                     ),
                   ),
-                ],
-              ),
+                ),
+                Draggable<Color>(
+                  data: color2,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.black26,
+                      shape: StadiumBorder(),
+                    ),
+                  ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Flexible(
-              flex: 2,
-              child: Container(
-                margin: EdgeInsets.all(5),
-                color: Colors.amber,
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                margin: EdgeInsets.all(5),
-                color: Colors.blue,
-              ),
+            DragTarget<Color>(
+              onWillAccept: (value) => true,
+              onAccept: (value) {
+                isAccepted = true;
+                targetColor = value;
+              },
+              builder: (context, candidates, rejected) {
+                return (isAccepted)
+                    ? SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: targetColor,
+                          shape: StadiumBorder(),
+                        ),
+                      )
+                    : SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                        ),
+                      );
+              },
             ),
           ],
         ),
