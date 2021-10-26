@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020"),
-          backgroundColor: Colors.red,
+          title: Text("RIZQILLAH / 1957301020 - Flexible Layout"),
+          backgroundColor: Colors.green,
         ),
         body: Column(
           children: <Widget>[
@@ -19,42 +19,24 @@ class MyApp extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Flexible(
-                    flex: 1,
+                    flex: 2,
                     child: Container(
-                      color: Colors.pink,
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://i.ytimg.com/vi/5cjWMAAbJPI/hqdefault.jpg",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+                      margin: EdgeInsets.all(5),
+                      color: Colors.red,
                     ),
                   ),
                   Flexible(
                     flex: 2,
                     child: Container(
-                      color: Colors.pink[100],
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://i.ytimg.com/vi/QZAc1hT1vdg/hqdefault.jpg",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+                      margin: EdgeInsets.all(5),
+                      color: Colors.green,
                     ),
                   ),
                   Flexible(
                     flex: 2,
                     child: Container(
-                      color: Colors.pink[300],
-                      foregroundDecoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              "https://avatars.githubusercontent.com/u/71523218?v=4",
-                            ),
-                            fit: BoxFit.fill),
-                      ),
+                      margin: EdgeInsets.all(5),
+                      color: Colors.purple,
                     ),
                   ),
                 ],
@@ -63,37 +45,17 @@ class MyApp extends StatelessWidget {
             Flexible(
               flex: 2,
               child: Container(
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.amber[200],
-                  borderRadius: BorderRadius.circular(40),
-                  image: DecorationImage(image: AssetImage('assets/images/logo.png'), fit: BoxFit.fill),
-                ),
+                margin: EdgeInsets.all(5),
+                color: Colors.amber,
               ),
             ),
             Flexible(
               flex: 1,
               child: Container(
-                color: Colors.blueGrey,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                      child: Container(
-                        color: Colors.yellow,
-                      ),
-                    ),
-                    Spacer(
-                      flex: 2,
-                    ),
-                    Flexible(
-                      child: Container(
-                        color: Colors.red[300],
-                      ),
-                    ),
-                  ],
-                ),
+                margin: EdgeInsets.all(5),
+                color: Colors.blue,
               ),
-            )
+            ),
           ],
         ),
       ),
