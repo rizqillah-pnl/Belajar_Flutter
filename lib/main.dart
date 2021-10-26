@@ -2,119 +2,81 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  Color color1 = Colors.red;
-  Color color2 = Colors.amber;
-  Color targetColor;
-  bool isAccepted = false;
+class LoginPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: ElevatedButton(
+            child: Text('LOGIN'),
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                return MainPage();
+              }));
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
 
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - Draggable"),
-          backgroundColor: Colors.blue,
+          title: Text('RIZQILLAH / 1957301020 - MAIN'),
+          backgroundColor: Colors.red,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Draggable<Color>(
-                  data: color1,
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: color1,
-                      shape: StadiumBorder(),
-                      elevation: 3,
-                    ),
-                  ),
-                  childWhenDragging: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: Colors.black26,
-                      shape: StadiumBorder(),
-                    ),
-                  ),
-                  feedback: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: color1.withOpacity(0.7),
-                      shape: StadiumBorder(),
-                      elevation: 3,
-                    ),
-                  ),
-                ),
-                Draggable<Color>(
-                  data: color2,
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: color2,
-                      shape: StadiumBorder(),
-                      elevation: 3,
-                    ),
-                  ),
-                  childWhenDragging: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: Colors.black26,
-                      shape: StadiumBorder(),
-                    ),
-                  ),
-                  feedback: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Material(
-                      color: color2.withOpacity(0.7),
-                      shape: StadiumBorder(),
-                      elevation: 3,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            DragTarget<Color>(
-              onWillAccept: (value) => true,
-              onAccept: (value) {
-                isAccepted = true;
-                targetColor = value;
-              },
-              builder: (context, candidates, rejected) {
-                return (isAccepted)
-                    ? SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: Material(
-                          color: targetColor,
-                          shape: StadiumBorder(),
-                        ),
-                      )
-                    : SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: Material(
-                          color: Colors.black26,
-                          shape: StadiumBorder(),
-                        ),
-                      );
-              },
-            ),
-          ],
+        body: Center(
+          child: ElevatedButton(
+            child: Text('Go to Second Page'),
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                return SecondPage();
+              }));
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('RIZQILLAH / 1957301020 - SECOND'),
+          backgroundColor: Colors.red,
+        ),
+        body: Center(
+          child: ElevatedButton(
+            child: Text('Back'),
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                return MainPage();
+              }));
+            },
+          ),
         ),
       ),
     );
