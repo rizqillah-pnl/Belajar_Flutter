@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - TextField"),
+          title: Text("RIZQILLAH / 1957301020 - TextField 2"),
           backgroundColor: Colors.blue,
         ),
         body: Container(
@@ -25,8 +25,28 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
+                decoration: InputDecoration(
+                  // icon: Icon(Icons.adb),
+                  // fillColor: Colors.lightBlue[50],
+                  // filled: true,
+                  suffix: Container(
+                    width: 5,
+                    height: 5,
+                    color: Colors.red,
+                  ),
+                  prefixIcon: Icon(Icons.person),
+                  // prefixText: 'Username : ',
+                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
+                  labelText: 'Nama Lengkap',
+                  // labelStyle: TextStyle(),
+                  hintText: "Nama Lengkapnya loh...",
+                  hintStyle: TextStyle(
+                    fontSize: 12,
+                  ),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                ),
                 maxLength: 10,
-                obscureText: false,
+                obscureText: true,
                 onChanged: (value) {
                   setState(() {});
                 },
