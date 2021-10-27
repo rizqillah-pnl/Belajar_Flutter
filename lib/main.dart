@@ -2,57 +2,29 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("RIZQILLAH / 1957301020 - TextField 2"),
-          backgroundColor: Colors.blue,
+          title: Text("RIZQILLAH / 1957301020 - Image"),
+          backgroundColor: Colors.green,
         ),
-        body: Container(
-          margin: EdgeInsets.all(20),
+        body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                  // icon: Icon(Icons.adb),
-                  // fillColor: Colors.lightBlue[50],
-                  // filled: true,
-                  suffix: Container(
-                    width: 5,
-                    height: 5,
-                    color: Colors.red,
-                  ),
-                  prefixIcon: Icon(Icons.person),
-                  // prefixText: 'Username : ',
-                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-                  labelText: 'Nama Lengkap',
-                  // labelStyle: TextStyle(),
-                  hintText: "Nama Lengkapnya loh...",
-                  hintStyle: TextStyle(
-                    fontSize: 12,
-                  ),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              Container(
+                color: Colors.black,
+                width: 200,
+                height: 200,
+                padding: EdgeInsets.all(3),
+                child: Image(
+                  image: AssetImage('assets/images/logo.png'),
+                  fit: BoxFit.contain,
                 ),
-                maxLength: 10,
-                obscureText: true,
-                onChanged: (value) {
-                  setState(() {});
-                },
-                controller: controller,
               ),
-              Text(controller.text)
             ],
           ),
         ),
