@@ -23,15 +23,19 @@ class MainPage extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: <Widget>[
-            Container(
-              width: getSmallDiameter(context),
-              height: getSmallDiameter(context),
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(colors: [
-                    Color(0xFFB226B2),
-                    Color(0xFFFF6DA7)
-                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+            Positioned(
+              right: -getSmallDiameter(context) / 3,
+              top: -getSmallDiameter(context) / 3,
+              child: Container(
+                width: getSmallDiameter(context),
+                height: getSmallDiameter(context),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(colors: [
+                      Color(0xFFB226B2),
+                      Color(0xFFFF6DA7)
+                    ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+              ),
             ),
           ],
         ),
