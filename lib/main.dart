@@ -37,6 +37,20 @@ class MainPage extends StatelessWidget {
                     ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
               ),
             ),
+            Positioned(
+              right: -getSmallDiameter(context) / 4,
+              top: -getSmallDiameter(context) / 4,
+              child: Container(
+                width: getBigDiameter(context),
+                height: getBigDiameter(context),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(colors: [
+                      Color(0xFFB226B2),
+                      Color(0xFFFF4891)
+                    ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+              ),
+            ),
           ],
         ),
       ),
