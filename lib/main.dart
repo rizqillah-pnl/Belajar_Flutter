@@ -85,6 +85,27 @@ class MainPage extends StatelessWidget {
                     ),
                     margin: EdgeInsets.fromLTRB(20, 300, 20, 10),
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 25),
+                    child: Column(
+                      children: <Widget>[
+                        TextField(
+                          decoration: InputDecoration(
+                            icon: Icon(
+                              Icons.email,
+                              color: Color(0xFFFF4891),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFFF4891),
+                              ),
+                            ),
+                            labelText: "Email : ",
+                            labelStyle: TextSyle(
+                              color: Color(0xFFFF4891),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
