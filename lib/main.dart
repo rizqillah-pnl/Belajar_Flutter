@@ -61,6 +61,17 @@ class MainPage extends StatelessWidget {
                     ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
               ),
             ),
+            Positioned(
+              right: -getBigDiameter(context) / 2,
+              bottom: -getBigDiameter(context) / 2,
+              child: Container(
+                width: getBigDiameter(context),
+                height: getBigDiameter(context),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFF3E9EE),
+              ),
+            ),
           ],
         ),
       ),
