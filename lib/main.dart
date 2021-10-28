@@ -21,6 +21,7 @@ class MainPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color(0xFFEEEEEE),
         body: Stack(
           children: <Widget>[
             Positioned(
@@ -71,6 +72,21 @@ class MainPage extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Color(0xFFF3E9EE),
                 ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    margin: EdgeInsets.fromLTRB(20, 300, 20, 10),
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 25),
+                  ),
+                ],
               ),
             ),
           ],
