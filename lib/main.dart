@@ -188,11 +188,32 @@ class MainPage extends StatelessWidget {
                         ),
                         FloatingActionButton(
                           onPressed: () {},
-                          mini: false,
+                          mini: true,
                           elevation: 0,
                           child: Image(
                             image: AssetImage("assets/images/twitter.png"),
                           ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Tidak Punya Akun? ",
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Color(0xFFFF4891),
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
