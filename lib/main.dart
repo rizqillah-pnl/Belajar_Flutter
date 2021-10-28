@@ -178,6 +178,22 @@ class MainPage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        FloatingActionButton(
+                          onPressed: () {},
+                          mini: true,
+                          elevation: 0,
+                          child: Image(
+                            image: AssetImage("assets/images/facebook.png"),
+                          ),
+                        ),
+                        FloatingActionButton(
+                          onPressed: () {},
+                          mini: false,
+                          elevation: 0,
+                          child: Image(
+                            image: AssetImage("assets/images/twitter.png"),
+                          ),
+                        ),
                       ],
                     ),
                   ),
