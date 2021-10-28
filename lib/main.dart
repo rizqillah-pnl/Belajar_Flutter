@@ -68,8 +68,9 @@ class MainPage extends StatelessWidget {
                 width: getBigDiameter(context),
                 height: getBigDiameter(context),
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFF3E9EE),
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF3E9EE),
+                ),
               ),
             ),
           ],
