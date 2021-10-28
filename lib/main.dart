@@ -41,6 +41,12 @@ class MainPage extends StatelessWidget {
               left: -getSmallDiameter(context) / 4,
               top: -getSmallDiameter(context) / 4,
               child: Container(
+                child: Center(
+                  child: Text(
+                    'RIZQILLAH',
+                    style: TextStyle(fontFamily: "CrashLandingBB"),
+                  ),
+                ),
                 width: getBigDiameter(context),
                 height: getBigDiameter(context),
                 decoration: BoxDecoration(
