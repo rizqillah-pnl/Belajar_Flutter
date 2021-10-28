@@ -29,7 +29,7 @@ class MainPage extends StatelessWidget {
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(colors: [
-                    Color(0xFF022602),
+                    Color(0xFFB22682),
                     Color(0xFFF6DA7)
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
             ),
