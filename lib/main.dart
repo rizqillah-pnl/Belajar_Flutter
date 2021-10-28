@@ -39,8 +39,8 @@ class MainPage extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: -getSmallDiameter(context) / 4,
-              top: -getSmallDiameter(context) / 4,
+              left: -getBigDiameter(context) / 4,
+              top: -getBigDiameter(context) / 4,
               child: Container(
                 child: Center(
                   child: Text(
