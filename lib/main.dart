@@ -99,7 +99,7 @@ class MainPage extends StatelessWidget {
                               ),
                             ),
                             labelText: "Email : ",
-                            labelStyle: TextSyle(
+                            labelStyle: TextStyle(
                               color: Color(0xFFFF4891),
                             ),
                           ),
