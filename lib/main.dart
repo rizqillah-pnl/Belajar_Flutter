@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                     'RIZQILLAH',
                     style: TextStyle(
                       fontFamily: "Pacifico",
-                      fontSize: 30,
+                      fontSize: 25,
                       color: Colors.white,
                     ),
                   ),
