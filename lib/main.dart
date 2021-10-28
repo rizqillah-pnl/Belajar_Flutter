@@ -45,7 +45,7 @@ class MainPage extends StatelessWidget {
                   child: Text(
                     'RIZQILLAH',
                     style: TextStyle(
-                      fontFamily: "CrashLandingBB",
+                      fontFamily: "Pacifico",
                       fontSize: 30,
                       color: Colors.white,
                     ),
