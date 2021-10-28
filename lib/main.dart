@@ -104,6 +104,24 @@ class MainPage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            icon: Icon(
+                              Icons.vpn_key,
+                              color: Color(0xFFFF4891),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFFF4891),
+                              ),
+                            ),
+                            labelText: "Password : ",
+                            labelStyle: TextStyle(
+                              color: Color(0xFFFF4891),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
