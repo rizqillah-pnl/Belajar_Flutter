@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// void main() {
+//   SystemChrome.setPreferredOrientations([
+//     DeviceOrientation.portraitUp
+//   ]).then((_) {
+//     runApp(new MyApp());
+//   });
+// }
 
 void main() => runApp(MyApp());
 
@@ -39,8 +48,8 @@ class MainPage extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: -getSmallDiameter(context) / 4,
-              top: -getSmallDiameter(context) / 4,
+              left: -getBigDiameter(context) / 4,
+              top: -getBigDiameter(context) / 4,
               child: Container(
                 child: Center(
                   child: Text(
@@ -194,29 +203,29 @@ class MainPage extends StatelessWidget {
                             image: AssetImage("assets/images/twitter.png"),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              "Tidak Punya Akun? ",
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Color(0xFFFF4891),
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Tidak Punya Akun? ",
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFFFF4891),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
