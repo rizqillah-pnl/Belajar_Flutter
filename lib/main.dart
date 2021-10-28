@@ -127,10 +127,14 @@ class MainPage extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Color(0xFFFF4891),
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 20, 20),
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: Color(0xFFFF4891),
+                          fontSize: 11,
+                        ),
                       ),
                     ),
                   ),
