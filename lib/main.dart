@@ -44,7 +44,11 @@ class MainPage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'RIZQILLAH',
-                    style: TextStyle(fontFamily: "CrashLandingBB"),
+                    style: TextStyle(
+                      fontFamily: "CrashLandingBB",
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 width: getBigDiameter(context),
