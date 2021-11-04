@@ -90,7 +90,7 @@ class _MyAppState extends State<Login> {
         body: Container(
           margin: EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
@@ -137,8 +137,53 @@ class _MyAppState extends State<Login> {
                 },
                 controller: controller,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  ElevatedButton(
+                    child: Text('Back'),
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                        return MainPage();
+                      }));
+                    },
+                  ),
+                  ElevatedButton(
+                    child: Text('Login'),
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                        return MataKuliah();
+                      }));
+                    },
+                  ),
+                ],
+              ),
               Text(controller.text)
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MataKuliah extends StatefulWidget {
+  @override
+  _MyAppState2 createState() => _MyAppState2();
+}
+
+class _MyAppState2 extends State<MataKuliah> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Color(0xFFEEEEEE),
+        body: Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[],
           ),
         ),
       ),
