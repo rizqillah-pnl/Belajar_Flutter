@@ -38,15 +38,17 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               Column(
-                Container(
-                  child: Text(
-                    "Selamat Datang!",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.amber,
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      "Selamat Datang!",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.amber,
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
