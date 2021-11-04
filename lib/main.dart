@@ -97,16 +97,16 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.person,
-                    color: Color(0xFFFF4891),
+                    color: Colors.white,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xFFFF4891),
+                      color: Colors.blue,
                     ),
                   ),
                   labelText: "Username : ",
                   labelStyle: TextStyle(
-                    color: Color(0xFFFF4891),
+                    color: Colors.blue,
                   ),
                 ),
               ),
@@ -115,16 +115,16 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Color(0xFFFF4891),
+                    color: Colors.white,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xFFFF4891),
+                      color: Colors.blue,
                     ),
                   ),
                   labelText: "Password : ",
                   labelStyle: TextStyle(
-                    color: Color(0xFFFF4891),
+                    color: Colors.blue,
                   ),
                 ),
               ),
@@ -158,12 +158,7 @@ class _MyAppState extends State<Login> {
   }
 }
 
-class MataKuliah extends StatefulWidget {
-  @override
-  _MyAppState2 createState() => _MyAppState2();
-}
-
-class _MyAppState2 extends State<MataKuliah> {
+class MataKuliah extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -171,13 +166,33 @@ class _MyAppState2 extends State<MataKuliah> {
       home: Scaffold(
         backgroundColor: Color(0xFFEEEEEE),
         body: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[],
+          margin: EdgeInsets.all(10),
+          child: ListView(
+            children: <Widget>[
+              buildCard(Icons.account_box, 'Pemrograman Mobile'),
+              buildCard(Icons.adb, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Bahasa Indonesia'),
+              buildCard(Icons.people, 'Bahasa Inggris'),
+              buildCard(Icons.people, 'Pemrograman Web'),
+              buildCard(Icons.people, 'Basis Data'),
+              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
+              buildCard(Icons.people, 'Pengolahan Citra Digital'),
+            ],
           ),
         ),
       ),
     );
   }
+}
+
+Card buildCard(IconData iconData, String text) {
+  return Card(
+    elevation: 5,
+    child: Row(
+      children: <Widget>[
+        Container(margin: EdgeInsets.all(5), child: Icon(iconData, color: Colors.blue)),
+        Text(text),
+      ],
+    ),
+  );
 }
