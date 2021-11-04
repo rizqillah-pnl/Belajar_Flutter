@@ -170,10 +170,12 @@ class MataKuliah extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               Container(
-                child: Text(
-                  "Mata Kuliah",
-                  style: TextStyle(
-                    fontSize: 25,
+                child: Center(
+                  child: Text(
+                    "Mata Kuliah",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
                   ),
                 ),
               ),
