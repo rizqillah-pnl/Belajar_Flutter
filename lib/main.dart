@@ -80,6 +80,7 @@ class Login extends StatefulWidget {
 
 class _MyAppState extends State<Login> {
   TextEditingController controller = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +136,7 @@ class _MyAppState extends State<Login> {
                 onChanged: (value) {
                   setState(() {});
                 },
-                controller: controller,
+                controller: controller2,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
