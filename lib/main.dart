@@ -95,32 +95,38 @@ class _MyAppState extends State<Login> {
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
-                  suffix: Container(
-                    width: 5,
-                    height: 5,
-                    color: Colors.red,
+                  icon: Icon(
+                    Icons.person,
+                    color: Color(0xFFFF4891),
                   ),
-                  prefixIcon: Icon(Icons.person),
-                  labelText: 'Username',
-                  hintStyle: TextStyle(
-                    fontSize: 12,
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFFF4891),
+                    ),
+                  ),
+                  labelText: "Username : ",
+                  labelStyle: TextStyle(
+                    color: Color(0xFFFF4891),
                   ),
                 ),
               ),
               TextField(
+                obscureText: true,
                 decoration: InputDecoration(
-                  suffix: Container(
-                    width: 5,
-                    height: 5,
-                    color: Colors.red,
+                  icon: Icon(
+                    Icons.vpn_key,
+                    color: Color(0xFFFF4891),
                   ),
-                  prefixIcon: Icon(Icons.vpn_key),
-                  labelText: 'Password',
-                  hintStyle: TextStyle(
-                    fontSize: 12,
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFFF4891),
+                    ),
+                  ),
+                  labelText: "Password : ",
+                  labelStyle: TextStyle(
+                    color: Color(0xFFFF4891),
                   ),
                 ),
-                obscureText: true,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
