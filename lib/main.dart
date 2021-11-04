@@ -90,7 +90,7 @@ class _MyAppState extends State<Login> {
         body: Container(
           margin: EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
