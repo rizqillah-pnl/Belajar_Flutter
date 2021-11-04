@@ -24,7 +24,7 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-               Container(
+              Container(
                 color: Colors.black,
                 width: 500,
                 height: 500,
@@ -40,6 +40,7 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
     );
   }
 }
