@@ -130,7 +130,7 @@ class _MyAppState extends State<Login> {
                 ),
               ),
               TextField(
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
