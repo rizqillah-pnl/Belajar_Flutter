@@ -91,57 +91,63 @@ class _MyAppState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.blue,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.person,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Username : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Username : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Colors.blue,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.vpn_key,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Password : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Password : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              TextField(
-                obscureText: false,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Colors.blue,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+                    TextField(
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.vpn_key,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Token : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Token : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
+                  ],
                 ),
               ),
               Row(
