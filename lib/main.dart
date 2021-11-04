@@ -40,11 +40,13 @@ class MainPage extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Container(
-                    child: Text(
-                      "Selamat Datang!",
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.amber,
+                    child: Center(
+                      child: Text(
+                        "Selamat Datang!",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.amber,
+                        ),
                       ),
                     ),
                   ),
