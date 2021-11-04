@@ -56,7 +56,7 @@ class MainPage extends StatelessWidget {
                     onPressed: () {},
                   ),
                   ElevatedButton(
-                    child: Text('Login'),
+                    child: Text('Masuk'),
                     onPressed: () {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
                         return Login();
@@ -73,7 +73,14 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<Login> {
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -84,7 +91,37 @@ class Login extends StatelessWidget {
           margin: EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[],
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(
+                  // icon: Icon(Icons.adb),
+                  // fillColor: Colors.lightBlue[50],
+                  // filled: true,
+                  suffix: Container(
+                    width: 5,
+                    height: 5,
+                    color: Colors.red,
+                  ),
+                  prefixIcon: Icon(Icons.person),
+                  // prefixText: 'Username : ',
+                  // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
+                  labelText: 'Nama Lengkap',
+                  // labelStyle: TextStyle(),
+                  hintText: "Nama Lengkapnya loh...",
+                  hintStyle: TextStyle(
+                    fontSize: 12,
+                  ),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+                maxLength: 10,
+                obscureText: true,
+                onChanged: (value) {
+                  setState(() {});
+                },
+                controller: controller,
+              ),
+              Text(controller.text)
+            ],
           ),
         ),
       ),
