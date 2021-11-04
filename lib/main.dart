@@ -98,7 +98,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.person,
-                    color: Colors.black,
+                    color: Colors.blue,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
