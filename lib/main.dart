@@ -207,6 +207,14 @@ class MataKuliah extends StatelessWidget {
               buildCard(Icons.people, 'Basis Data'),
               buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
               buildCard(Icons.people, 'Pengolahan Citra Digital'),
+              ElevatedButton(
+                child: Text('LogOut'),
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                    return MainPage();
+                  }));
+                },
+              ),
             ],
           ),
         ),
