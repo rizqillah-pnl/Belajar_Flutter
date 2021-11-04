@@ -97,7 +97,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.person,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -115,7 +115,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
