@@ -106,7 +106,6 @@ class _MyAppState extends State<Login> {
                     fontSize: 12,
                   ),
                 ),
-                obscureText: false,
               ),
               TextField(
                 decoration: InputDecoration(
