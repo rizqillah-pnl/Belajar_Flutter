@@ -97,7 +97,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.person,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -115,7 +115,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -123,6 +123,24 @@ class _MyAppState extends State<Login> {
                     ),
                   ),
                   labelText: "Password : ",
+                  labelStyle: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.vpn_key,
+                    color: Colors.black,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  labelText: "Token : ",
                   labelStyle: TextStyle(
                     color: Colors.blue,
                   ),
@@ -169,6 +187,16 @@ class MataKuliah extends StatelessWidget {
           margin: EdgeInsets.all(10),
           child: ListView(
             children: <Widget>[
+              Container(
+                child: Center(
+                  child: Text(
+                    "Mata Kuliah",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+              ),
               buildCard(Icons.account_box, 'Pemrograman Mobile'),
               buildCard(Icons.adb, 'Pemrograman Lanjut'),
               buildCard(Icons.people, 'Bahasa Indonesia'),

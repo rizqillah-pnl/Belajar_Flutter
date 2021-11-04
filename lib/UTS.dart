@@ -128,6 +128,24 @@ class _MyAppState extends State<Login> {
                   ),
                 ),
               ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.vpn_key,
+                    color: Colors.black,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  labelText: "Token : ",
+                  labelStyle: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
