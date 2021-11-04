@@ -80,9 +80,6 @@ class Login extends StatefulWidget {
 }
 
 class _MyAppState extends State<Login> {
-  TextEditingController controller = TextEditingController();
-  TextEditingController controller2 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -168,7 +165,6 @@ class _MyAppState extends State<Login> {
                   ),
                 ],
               ),
-              Text(controller.text)
             ],
           ),
         ),
@@ -199,6 +195,30 @@ class MataKuliah extends StatelessWidget {
                   ),
                 ),
               ),
+              buildCard(Icons.people, 'Pemrograman Mobile'),
+              buildCard(Icons.people, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Bahasa Indonesia'),
+              buildCard(Icons.people, 'Bahasa Inggris'),
+              buildCard(Icons.people, 'Pemrograman Web'),
+              buildCard(Icons.people, 'Basis Data'),
+              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
+              buildCard(Icons.people, 'Pengolahan Citra Digital'),
+              buildCard(Icons.people, 'Pemrograman Mobile'),
+              buildCard(Icons.people, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Bahasa Indonesia'),
+              buildCard(Icons.people, 'Bahasa Inggris'),
+              buildCard(Icons.people, 'Pemrograman Web'),
+              buildCard(Icons.people, 'Basis Data'),
+              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
+              buildCard(Icons.people, 'Pengolahan Citra Digital'),
+              buildCard(Icons.people, 'Pemrograman Mobile'),
+              buildCard(Icons.people, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Bahasa Indonesia'),
+              buildCard(Icons.people, 'Bahasa Inggris'),
+              buildCard(Icons.people, 'Pemrograman Web'),
+              buildCard(Icons.people, 'Basis Data'),
+              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
+              buildCard(Icons.people, 'Pengolahan Citra Digital'),
               buildCard(Icons.people, 'Pemrograman Mobile'),
               buildCard(Icons.people, 'Pemrograman Lanjut'),
               buildCard(Icons.people, 'Bahasa Indonesia'),
