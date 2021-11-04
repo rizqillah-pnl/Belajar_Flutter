@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-              Column(
+              Row(
                 children: <Widget>[
                   Container(
                     child: Text(
