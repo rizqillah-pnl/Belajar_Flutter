@@ -26,8 +26,8 @@ class MainPage extends StatelessWidget {
             children: <Widget>[
               Container(
                 color: Colors.black,
-                width: 500,
-                height: 500,
+                width: 200,
+                height: 200,
                 padding: EdgeInsets.all(3),
                 margin: EdgeInsets.only(bottom: 20, top: 20),
                 child: Image(
@@ -35,6 +35,15 @@ class MainPage extends StatelessWidget {
                     "assets/images/logo.png",
                   ),
                   fit: BoxFit.contain,
+                ),
+              ),
+              Container(
+                child: Text(
+                  "Selamat Datang!",
+                  style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.amber,
+                  ),
                 ),
               ),
             ],
