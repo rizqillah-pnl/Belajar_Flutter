@@ -21,7 +21,7 @@ class MainPage extends StatelessWidget {
         backgroundColor: Color(0xFFEEEEEE),
         body: Container(
           margin: EdgeInsets.all(20),
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Container(
@@ -35,6 +35,17 @@ class MainPage extends StatelessWidget {
                     "assets/images/logo.png",
                   ),
                   fit: BoxFit.contain,
+                ),
+              ),
+              Column(
+                Container(
+                  child: Text(
+                    "Selamat Datang!",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.amber,
+                    ),
+                  ),
                 ),
               ),
             ],
