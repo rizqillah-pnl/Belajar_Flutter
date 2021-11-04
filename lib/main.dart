@@ -105,15 +105,32 @@ class _MyAppState extends State<Login> {
                   prefixIcon: Icon(Icons.person),
                   // prefixText: 'Username : ',
                   // prefixStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-                  labelText: 'Nama Lengkap',
-                  // labelStyle: TextStyle(),
-                  hintText: "Nama Lengkapnya loh...",
+                  labelText: 'Username',
                   hintStyle: TextStyle(
                     fontSize: 12,
                   ),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 ),
-                maxLength: 10,
+                obscureText: false,
+                onChanged: (value) {
+                  setState(() {});
+                },
+                controller: controller,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  suffix: Container(
+                    width: 5,
+                    height: 5,
+                    color: Colors.red,
+                  ),
+                  prefixIcon: Icon(Icons.vpn_key),
+                  labelText: 'Password',
+                  hintStyle: TextStyle(
+                    fontSize: 12,
+                  ),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                ),
                 obscureText: true,
                 onChanged: (value) {
                   setState(() {});
