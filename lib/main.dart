@@ -115,7 +115,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Colors.black,
+                    color: Colors.blue,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -133,7 +133,7 @@ class _MyAppState extends State<Login> {
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Colors.black,
+                    color: Colors.blue,
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -193,6 +193,7 @@ class MataKuliah extends StatelessWidget {
                     "Mata Kuliah",
                     style: TextStyle(
                       fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
