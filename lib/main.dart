@@ -43,7 +43,7 @@ class MainPage extends StatelessWidget {
                     "Selamat Datang!",
                     style: TextStyle(
                       fontSize: 25,
-                      color: Colors.black,
+                      color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
