@@ -37,15 +37,6 @@ class MainPage extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-              Container(
-                child: Text(
-                  "Selamat Datang!",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: Colors.amber,
-                  ),
-                ),
-              ),
             ],
           ),
         ),
