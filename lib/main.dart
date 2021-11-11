@@ -15,54 +15,32 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatefulWidget {
-  @override
-  HomeState createState() => HomeState();
-}
+// class Home extends StatefulWidget {
+//   @override
+//   HomeState createState() => HomeState();
+// }
 
-class HomeState extends State<Home> {
-  int selected = -1;
-
-  void onChanged(int value) {
-    setState(() {
-      this.selected = value;
-    });
-    print('Pilihan : ${this.selected}');
-  }
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Demo Radio'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            Text('Jenis Kelamin: '),
-            RadioListTile(
-              value: 0,
-              groupValue: this.selected,
-              onChanged: (value) {
-                onChanged(value);
-              },
-              title: Text('Pria'),
-              activeColor: Colors.red,
-              secondary: Icon(Icons.group),
-            ),
-            RadioListTile(
-              value: 1,
-              groupValue: this.selected,
-              onChanged: (value) {
-                onChanged(value);
-              },
-              title: Text('Wanita'),
-              activeColor: Colors.red,
-              secondary: Icon(Icons.group),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: <Widget>[
+          Image.asset(
+            'assets/images/facebook.png',
+            height: 250.0,
+            fit: BoxFit.cover,
+          ),
+          Divider(),
+          Image.asset(
+            'assets/images/twitter.png',
+            height: 250.0,
+            fit: BoxFit.cover,
+          ),
+        ],
       ),
     );
   }
