@@ -27,10 +27,10 @@ class HomeState extends State<Home> {
     setState(() {
       switch (index) {
         case 0:
-          this.fileName = 'assets/images/facebook.png';
+          this.fileName = 'asset/images/facebook.png';
           break;
         case 1:
-          this.fileName = 'assets/images/twitter.png';
+          this.fileName = 'asset/images/twitter.png';
           break;
       }
     });
