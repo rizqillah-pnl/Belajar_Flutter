@@ -15,28 +15,51 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class Home extends StatefulWidget {
-//   @override
-//   HomeState createState() => HomeState();
-// }
+class Home extends StatefulWidget {
+  @override
+  HomeState createState() => HomeState();
+}
 
-class Home extends StatelessWidget {
+class HomeState extends State<Home> {
+  String fileName = 'assets/images/logo.png';
+
+  void selectImage(int index) {
+    setState(() {
+      switch (index) {
+        case 0:
+          this.fileName = 'asset/images/facebook.png';
+          break;
+        case 1:
+          this.fileName = 'asset/images/twitter.png';
+          break;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo Radio'),
+        title: Text('Demo Icon'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.local_pizza),
+            onPressed: () {
+              selectImage(0);
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.cake),
+            onPressed: () {
+              selectImage(1);
+            },
+          ),
+        ],
       ),
       body: ListView(
         children: <Widget>[
           Image.asset(
-            'assets/images/facebook.png',
-            height: 250.0,
-            fit: BoxFit.cover,
-          ),
-          Divider(),
-          Image.asset(
-            'assets/images/twitter.png',
+            this.fileName,
             height: 250.0,
             fit: BoxFit.cover,
           ),
