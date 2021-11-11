@@ -107,7 +107,7 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected3,
-                  onChanged: (bool value) {
+                  onChanged: (value) {
                     onChanged3(value);
                   },
                 ),
