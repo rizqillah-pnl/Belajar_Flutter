@@ -96,7 +96,7 @@ class HomeState extends State<Home> {
             CheckboxListTile(
               value: this.selected3,
               onChanged: (value) {
-                onChanged2(value);
+                onChanged3(value);
               },
               title: Text(this.bahasa[2]),
               activeColor: Colors.red,
