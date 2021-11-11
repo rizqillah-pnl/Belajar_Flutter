@@ -67,7 +67,6 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      debugShowCheckedModeBanner: false,
       appBar: AppBar(
         title: Text('Demo Checkbox'),
       ),
