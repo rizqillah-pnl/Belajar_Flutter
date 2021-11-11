@@ -21,52 +21,119 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  String name = '';
-  String text = '';
+  final List<String> settings = [
+    'Airplane Mode',
+    'WLAN',
+    'Mobile Data',
+    'Bluetooth'
+  ];
+  List<bool> settingValues = [
+    false,
+    false,
+    false,
+    false
+  ];
 
-  void onPressed() {
+  void onSwitch1Changed(bool value) {
     setState(() {
-      if (this.name.trim().length == 0) return;
-      this.text = 'Hai ' + this.name + ', Apa Kabar?';
+      this.settingValues[0] = value;
     });
+    print(settingValues);
   }
 
-  void onChanged(String value) {
+  void onSwitch2Changed(bool value) {
     setState(() {
-      this.name = value;
+      this.settingValues[1] = value;
     });
+    print(settingValues);
+  }
+
+  void onSwitch3Changed(bool value) {
+    setState(() {
+      this.settingValues[2] = value;
+    });
+    print(settingValues);
+  }
+
+  void onSwitch4Changed(bool value) {
+    setState(() {
+      this.settingValues[3] = value;
+    });
+    print(settingValues);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo TextField'),
+        title: Text('Demo Switch'),
       ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            onChanged: (value) {
-              onChanged(value);
-            },
-            decoration: InputDecoration(
-              hintText: 'Ketik Nama Lengkap',
-              hintStyle: TextStyle(
-                fontStyle: FontStyle.normal,
-              ),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: ListView(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Switch(
+                  value: this.settingValues[0],
+                  onChanged: (value) {
+                    onSwitch1Changed(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.settings[0]),
+              ],
             ),
-          ),
-          ElevatedButton(
-            child: Text('Klik'),
-            onPressed: () {
-              onPressed();
-            },
-          ),
-          Container(
-            height: 15.0,
-          ),
-          Text(this.text),
-        ],
+            Divider(),
+            Row(
+              children: <Widget>[
+                Switch(
+                  value: this.settingValues[1],
+                  onChanged: (value) {
+                    onSwitch2Changed(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.settings[1]),
+              ],
+            ),
+            Divider(),
+            Row(
+              children: <Widget>[
+                Switch(
+                  value: this.settingValues[2],
+                  onChanged: (value) {
+                    onSwitch3Changed(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.settings[2]),
+              ],
+            ),
+            Divider(),
+            Row(
+              children: <Widget>[
+                Switch(
+                  value: this.settingValues[3],
+                  onChanged: (value) {
+                    onSwitch4Changed(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.settings[3]),
+              ],
+            ),
+            Divider(),
+          ],
+        ),
       ),
     );
   }
