@@ -79,8 +79,8 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected1,
-                  onChanged: (bool value) {
-                    onChange1(value);
+                  onChanged: (value) {
+                    onChanged1(value);
                   },
                 ),
                 Container(
@@ -93,8 +93,8 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected2,
-                  onChanged: (bool value) {
-                    onChange2(value);
+                  onChanged: (value) {
+                    onChanged2(value);
                   },
                 ),
                 Container(
@@ -108,7 +108,7 @@ class HomeState extends State<Home> {
                 Checkbox(
                   value: this.selected3,
                   onChanged: (bool value) {
-                    onChange3(value);
+                    onChanged3(value);
                   },
                 ),
                 Container(
