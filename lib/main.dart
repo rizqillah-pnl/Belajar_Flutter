@@ -7,240 +7,121 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      title: 'Demo Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Home(),
     );
   }
 }
 
-class MainPage extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  HomeState createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  final List<String> bahasa = [
+    'Java',
+    'Kotlin',
+    'Dart'
+  ];
+  bool selected1 = false;
+  bool selected2 = false;
+  bool selected3 = false;
+  List<int> list = [];
+
+  void onChanged1(bool value) {
+    setState(() {
+      this.selected1 = value;
+    });
+    if (value)
+      list.add(0);
+    else
+      list.remove(0);
+    print(list);
+  }
+
+  void onChanged2(bool value) {
+    setState(() {
+      this.selected2 = value;
+    });
+    if (value)
+      list.add(1);
+    else
+      list.remove(1);
+    print(list);
+  }
+
+  void onChanged3(bool value) {
+    setState(() {
+      this.selected3 = value;
+    });
+    if (value)
+      list.add(2);
+    else
+      list.remove(2);
+    print(list);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Scaffold(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Color(0xFFEEEEEE),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Container(
-                color: Colors.black,
-                width: 200,
-                height: 200,
-                padding: EdgeInsets.all(3),
-                margin: EdgeInsets.only(bottom: 20, top: 20),
-                child: Image(
-                  image: AssetImage(
-                    "assets/images/logo.png",
-                  ),
-                  fit: BoxFit.contain,
+      appBar: AppBar(
+        title: Text('Demo Checkbox'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10, 0),
+        child: Column(
+          children: <Widget>[
+            Text('Bahasa yang disukai : '),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected1,
+                  onChange: (bool value) {
+                    onChange1(value);
+                  },
                 ),
-              ),
-              Container(
-                child: Center(
-                  child: Text(
-                    "Selamat Datang!",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                Container(
+                  width: 8.0,
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  ElevatedButton(
-                    child: Text('Daftar'),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text('Masuk'),
-                    onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return Login();
-                      }));
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
+                Text(this.bahasa[0]),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected2,
+                  onChange: (bool value) {
+                    onChange2(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.bahasa[1]),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected3,
+                  onChange: (bool value) {
+                    onChange3(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.bahasa[2]),
+              ],
+            ),
+          ],
         ),
       ),
     );
   }
-}
-
-class Login extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<Login> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Color(0xFFEEEEEE),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.person,
-                          color: Colors.blue,
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blue,
-                          ),
-                        ),
-                        labelText: "Username : ",
-                        labelStyle: TextStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
-                    ),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.vpn_key,
-                          color: Colors.blue,
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blue,
-                          ),
-                        ),
-                        labelText: "Password : ",
-                        labelStyle: TextStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
-                    ),
-                    TextField(
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.vpn_key,
-                          color: Colors.blue,
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blue,
-                          ),
-                        ),
-                        labelText: "Token : ",
-                        labelStyle: TextStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  ElevatedButton(
-                    child: Text('Back'),
-                    onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return MainPage();
-                      }));
-                    },
-                  ),
-                  ElevatedButton(
-                    child: Text('Login'),
-                    onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return MataKuliah();
-                      }));
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MataKuliah extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Color(0xFFEEEEEE),
-        body: Container(
-          margin: EdgeInsets.all(10),
-          child: ListView(
-            children: <Widget>[
-              Container(
-                child: Center(
-                  child: Text(
-                    "Mata Kuliah",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              buildCard(Icons.people, 'Pemrograman Mobile'),
-              buildCard(Icons.people, 'Pemrograman Lanjut'),
-              buildCard(Icons.people, 'Bahasa Indonesia'),
-              buildCard(Icons.people, 'Bahasa Inggris'),
-              buildCard(Icons.people, 'Pemrograman Web'),
-              buildCard(Icons.people, 'Basis Data'),
-              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
-              buildCard(Icons.people, 'Pengolahan Citra Digital'),
-              buildCard(Icons.people, 'Pemrograman Mobile'),
-              buildCard(Icons.people, 'Pemrograman Lanjut'),
-              buildCard(Icons.people, 'Bahasa Indonesia'),
-              buildCard(Icons.people, 'Bahasa Inggris'),
-              buildCard(Icons.people, 'Pemrograman Web'),
-              buildCard(Icons.people, 'Basis Data'),
-              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
-              buildCard(Icons.people, 'Pengolahan Citra Digital'),
-              ElevatedButton(
-                child: Text('Logout'),
-                onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                    return MainPage();
-                  }));
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-Card buildCard(IconData iconData, String text) {
-  return Card(
-    elevation: 5,
-    child: Row(
-      children: <Widget>[
-        Container(margin: EdgeInsets.all(5), child: Icon(iconData, color: Colors.blue)),
-        Text(text),
-      ],
-    ),
-  );
 }

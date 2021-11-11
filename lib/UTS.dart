@@ -43,7 +43,8 @@ class MainPage extends StatelessWidget {
                     "Selamat Datang!",
                     style: TextStyle(
                       fontSize: 25,
-                      color: Colors.black,
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -79,9 +80,6 @@ class Login extends StatefulWidget {
 }
 
 class _MyAppState extends State<Login> {
-  TextEditingController controller = TextEditingController();
-  TextEditingController controller2 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -93,57 +91,63 @@ class _MyAppState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.black,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.person,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Username : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Username : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Colors.black,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.vpn_key,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Password : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Password : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Colors.black,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+                    TextField(
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.vpn_key,
+                          color: Colors.blue,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        labelText: "Token : ",
+                        labelStyle: TextStyle(
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                  ),
-                  labelText: "Token : ",
-                  labelStyle: TextStyle(
-                    color: Colors.blue,
-                  ),
+                  ],
                 ),
               ),
               Row(
@@ -167,7 +171,6 @@ class _MyAppState extends State<Login> {
                   ),
                 ],
               ),
-              Text(controller.text)
             ],
           ),
         ),
@@ -193,18 +196,35 @@ class MataKuliah extends StatelessWidget {
                     "Mata Kuliah",
                     style: TextStyle(
                       fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
-              buildCard(Icons.account_box, 'Pemrograman Mobile'),
-              buildCard(Icons.adb, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Pemrograman Mobile'),
+              buildCard(Icons.people, 'Pemrograman Lanjut'),
               buildCard(Icons.people, 'Bahasa Indonesia'),
               buildCard(Icons.people, 'Bahasa Inggris'),
               buildCard(Icons.people, 'Pemrograman Web'),
               buildCard(Icons.people, 'Basis Data'),
               buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
               buildCard(Icons.people, 'Pengolahan Citra Digital'),
+              buildCard(Icons.people, 'Pemrograman Mobile'),
+              buildCard(Icons.people, 'Pemrograman Lanjut'),
+              buildCard(Icons.people, 'Bahasa Indonesia'),
+              buildCard(Icons.people, 'Bahasa Inggris'),
+              buildCard(Icons.people, 'Pemrograman Web'),
+              buildCard(Icons.people, 'Basis Data'),
+              buildCard(Icons.people, 'Rancangan Analisa dan Algoritma'),
+              buildCard(Icons.people, 'Pengolahan Citra Digital'),
+              ElevatedButton(
+                child: Text('Logout'),
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                    return MainPage();
+                  }));
+                },
+              ),
             ],
           ),
         ),
