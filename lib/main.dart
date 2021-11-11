@@ -21,91 +21,101 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  final List<String> settings = [
-    'Airplane Mode',
-    'WLAN',
-    'Mobile Data',
-    'Bluetooth'
+  final List<String> bahasa = [
+    'Java',
+    'Kotlin',
+    'Dart'
   ];
-  List<bool> settingValues = [
-    false,
-    false,
-    false,
-    false
-  ];
+  bool selected1 = false;
+  bool selected2 = false;
+  bool selected3 = false;
+  List<int> list = [];
 
-  void onSwitch1Changed(bool value) {
+  void onChanged1(bool value) {
     setState(() {
-      this.settingValues[0] = value;
+      this.selected1 = value;
     });
-    print(settingValues);
+    if (value)
+      list.add(0);
+    else
+      list.remove(0);
+    print(list);
   }
 
-  void onSwitch2Changed(bool value) {
+  void onChanged2(bool value) {
     setState(() {
-      this.settingValues[1] = value;
+      this.selected2 = value;
     });
-    print(settingValues);
+    if (value)
+      list.add(1);
+    else
+      list.remove(1);
+    print(list);
   }
 
-  void onSwitch3Changed(bool value) {
+  void onChanged3(bool value) {
     setState(() {
-      this.settingValues[2] = value;
+      this.selected3 = value;
     });
-    print(settingValues);
-  }
-
-  void onSwitch4Changed(bool value) {
-    setState(() {
-      this.settingValues[3] = value;
-    });
-    print(settingValues);
+    if (value)
+      list.add(2);
+    else
+      list.remove(2);
+    print(list);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo Switch'),
+        title: Text('Demo Checkbox'),
       ),
       body: Container(
         padding: EdgeInsets.all(10),
-        child: ListView(
+        child: Column(
           children: <Widget>[
-            SwitchListTile(
-              value: this.settingValues[0],
-              onChanged: (value) {
-                onSwitch1Changed(value);
-              },
-              title: Text(this.settings[0]),
-              secondary: Icon(Icons.airplanemode_active),
+            Text('Bahasa yang disukai : '),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected1,
+                  onChanged: (value) {
+                    onChanged1(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.bahasa[0]),
+              ],
             ),
-            Divider(),
-            SwitchListTile(
-              value: this.settingValues[1],
-              onChanged: (value) {
-                onSwitch2Changed(value);
-              },
-              title: Text(this.settings[1]),
-              secondary: Icon(Icons.wifi),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected2,
+                  onChanged: (value) {
+                    onChanged2(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.bahasa[1]),
+              ],
             ),
-            Divider(),
-            SwitchListTile(
-              value: this.settingValues[2],
-              onChanged: (value) {
-                onSwitch3Changed(value);
-              },
-              title: Text(this.settings[2]),
-              secondary: Icon(Icons.data_usage),
-            ),
-            Divider(),
-            SwitchListTile(
-              value: this.settingValues[3],
-              onChanged: (value) {
-                onSwitch4Changed(value);
-              },
-              title: Text(this.settings[3]),
-              secondary: Icon(Icons.bluetooth),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                  value: this.selected3,
+                  onChanged: (value) {
+                    onChanged3(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text(this.bahasa[2]),
+              ],
             ),
           ],
         ),
