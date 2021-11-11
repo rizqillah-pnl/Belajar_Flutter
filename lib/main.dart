@@ -72,7 +72,7 @@ class HomeState extends State<Home> {
         title: Text('Demo Checkbox'),
       ),
       body: Container(
-        padding: EdgeInsets.all(10, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
             Text('Bahasa yang disukai : '),
@@ -80,7 +80,7 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected1,
-                  onChange: (bool value) {
+                  onChanged: (bool value) {
                     onChange1(value);
                   },
                 ),
@@ -94,7 +94,7 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected2,
-                  onChange: (bool value) {
+                  onChanged: (bool value) {
                     onChange2(value);
                   },
                 ),
@@ -108,7 +108,7 @@ class HomeState extends State<Home> {
               children: <Widget>[
                 Checkbox(
                   value: this.selected3,
-                  onChange: (bool value) {
+                  onChanged: (bool value) {
                     onChange3(value);
                   },
                 ),
