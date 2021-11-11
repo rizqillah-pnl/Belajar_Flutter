@@ -21,18 +21,19 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  String fileName = 'assets/images/logo.png';
+  String name = '';
+  String text = '';
 
-  void selectImage(int index) {
+  void onPressed() {
     setState(() {
-      switch (index) {
-        case 0:
-          this.fileName = 'assets/images/facebook.png';
-          break;
-        case 1:
-          this.fileName = 'assets/images/twitter.png';
-          break;
-      }
+      if (this.name.trim().length == 0) return;
+      this.text = 'Hai ' + this.name + ', Apa Kabar?';
+    });
+  }
+
+  void onChanged(String value) {
+    setState(() {
+      this.name = value;
     });
   }
 
@@ -40,29 +41,31 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo Icon'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.local_pizza),
-            onPressed: () {
-              selectImage(0);
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.cake),
-            onPressed: () {
-              selectImage(1);
-            },
-          ),
-        ],
+        title: Text('Demo TextField'),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
-          Image.asset(
-            this.fileName,
-            height: 250.0,
-            fit: BoxFit.cover,
+          TextField(
+            onChanged: (value) {
+              onChanged(value);
+            },
+            decoration: InputDecoration(
+              hintText: 'Ketik Nama Lengkap',
+              hintStyle: TextStyle(
+                fontStyle: FontStyle.normal,
+              ),
+            ),
           ),
+          ElevatedButton(
+            child: Text('Klik'),
+            onPressed: () {
+              onPressed();
+            },
+          ),
+          Container(
+            height: 15.0,
+          ),
+          Text(this.text),
         ],
       ),
     );
