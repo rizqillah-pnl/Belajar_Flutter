@@ -21,18 +21,47 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  bool selected = false;
+  final List<String> bahasa = [
+    'Java',
+    'Kotlin',
+    'Dart'
+  ];
+  bool selected1 = false;
+  bool selected2 = false;
+  bool selected3 = false;
+  List<int> list = [];
 
-  void onTextFieldChanged(String value) {
+  void onChanged1(bool value) {
     setState(() {
-      print(value);
+      this.selected1 = value;
     });
+    if (value)
+      list.add(0);
+    else
+      list.remove(0);
+    print(list);
   }
 
-  void onCheckboxChanged(bool value) {
+  void onChanged2(bool value) {
     setState(() {
-      this.selected = value;
+      this.selected2 = value;
     });
+    if (value)
+      list.add(1);
+    else
+      list.remove(1);
+    print(list);
+  }
+
+  void onChanged3(bool value) {
+    setState(() {
+      this.selected3 = value;
+    });
+    if (value)
+      list.add(2);
+    else
+      list.remove(2);
+    print(list);
   }
 
   @override
@@ -44,30 +73,34 @@ class HomeState extends State<Home> {
       body: Container(
         padding: EdgeInsets.all(10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
-              enabled: !this.selected,
+            Text('Bahasa yang disukai : '),
+            CheckboxListTile(
+              value: this.selected1,
               onChanged: (value) {
-                onTextFieldChanged(value);
+                onChanged1(value);
               },
-              decoration: InputDecoration(
-                hintText: 'Ketik teks di sini',
-                hintStyle: TextStyle(
-                  fontStyle: FontStyle.normal,
-                ),
-              ),
+              title: Text(this.bahasa[0]),
+              activeColor: Colors.red,
+              secondary: Icon(Icons.language),
             ),
-            Row(
-              children: <Widget>[
-                Checkbox(
-                  value: this.selected,
-                  onChanged: (value) {
-                    onCheckboxChanged(value);
-                  },
-                ),
-                Text('Disable Input Box'),
-              ],
+            CheckboxListTile(
+              value: this.selected2,
+              onChanged: (value) {
+                onChanged1(value);
+              },
+              title: Text(this.bahasa[1]),
+              activeColor: Colors.red,
+              secondary: Icon(Icons.language),
+            ),
+            CheckboxListTile(
+              value: this.selected3,
+              onChanged: (value) {
+                onChanged1(value);
+              },
+              title: Text(this.bahasa[2]),
+              activeColor: Colors.red,
+              secondary: Icon(Icons.language),
             ),
           ],
         ),
