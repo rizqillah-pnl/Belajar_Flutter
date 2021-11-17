@@ -21,47 +21,18 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  final List<String> bahasa = [
-    'Java',
-    'Kotlin',
-    'Dart'
-  ];
-  bool selected1 = false;
-  bool selected2 = false;
-  bool selected3 = false;
-  List<int> list = [];
+  bool selected = false;
 
-  void onChanged1(bool value) {
+  void onTextFieldChanged(String value) {
     setState(() {
-      this.selected1 = value;
+      print(value);
     });
-    if (value)
-      list.add(0);
-    else
-      list.remove(0);
-    print(list);
   }
 
-  void onChanged2(bool value) {
+  void onCheckboxChanged(bool value) {
     setState(() {
-      this.selected2 = value;
+      this.selected = value;
     });
-    if (value)
-      list.add(1);
-    else
-      list.remove(1);
-    print(list);
-  }
-
-  void onChanged3(bool value) {
-    setState(() {
-      this.selected3 = value;
-    });
-    if (value)
-      list.add(2);
-    else
-      list.remove(2);
-    print(list);
   }
 
   @override
@@ -73,48 +44,29 @@ class HomeState extends State<Home> {
       body: Container(
         padding: EdgeInsets.all(10),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Bahasa yang disukai : '),
-            Row(
-              children: <Widget>[
-                Checkbox(
-                  value: this.selected1,
-                  onChanged: (value) {
-                    onChanged1(value);
-                  },
+            TextField(
+              enabled: !this.selected,
+              onChanged: (value) {
+                onTextFieldChanged(value);
+              },
+              decoration: InputDecoration(
+                hintText: 'Ketik teks di sini',
+                hintStyle: TextStyle(
+                  fontStyle: FontStyle.normal,
                 ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.bahasa[0]),
-              ],
+              ),
             ),
             Row(
               children: <Widget>[
                 Checkbox(
-                  value: this.selected2,
+                  value: this.selected,
                   onChanged: (value) {
-                    onChanged2(value);
+                    onCheckboxChanged(value);
                   },
                 ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.bahasa[1]),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Checkbox(
-                  value: this.selected3,
-                  onChanged: (value) {
-                    onChanged3(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.bahasa[2]),
+                Text('Disable Input Box'),
               ],
             ),
           ],
