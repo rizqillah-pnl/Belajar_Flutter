@@ -25,7 +25,7 @@ class HomeState extends State<Home> {
 
   Future<Null> selectDate(BuildContext context) async {
     final TimeOfDay selected = await showTimePicker(context: context, initialTime: this.time);
-    if (selected != null && selected != this.date) {
+    if (selected != null && selected != this.time) {
       setState(() {
         this.time = selected;
       });
