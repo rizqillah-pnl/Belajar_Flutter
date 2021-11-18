@@ -46,7 +46,7 @@ class HomeState extends State<Home> {
             RaisedButton(
               child: Text('Pilih Tanggal'),
               onPressed: () {
-                selectedDate(context);
+                selectDate(context);
               },
             ),
           ],
