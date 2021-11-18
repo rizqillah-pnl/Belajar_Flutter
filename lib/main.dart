@@ -24,7 +24,12 @@ class HomeState extends State<Home> {
   DateTime date = DateTime.now();
 
   Future<Null> selectDate(BuildContext context) async {
-    final DateTime selected = await showDatePicker(context: context, initialDate: this.date, firstDate: DateTime(2019), lastDate: DateTime(2021));
+    DateTime selected = await showDatePicker(
+      context: context,
+      initialDate: this.date,
+      firstDate: DateTime(2019),
+      lastDate: DateTime(2021),
+    );
     if (selected != null && selected != this.date) {
       setState(() {
         this.date = selected;
