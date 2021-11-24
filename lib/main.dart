@@ -41,35 +41,25 @@ class HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             Text('Jenis Kelamin: '),
-            Row(
-              children: <Widget>[
-                Radio(
-                  value: 88,
-                  groupValue: this.selected,
-                  onChanged: (value) {
-                    onChanged(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text('Pria'),
-              ],
+            RadioListTile(
+              value: 0,
+              groupValue: this.selected,
+              onChanged: (value) {
+                onChanged(value);
+              },
+              title: Text('Pria'),
+              activeColor: Colors.red,
+              secondary: Icon(Icons.group),
             ),
-            Row(
-              children: <Widget>[
-                Radio(
-                  value: 99,
-                  groupValue: this.selected,
-                  onChanged: (value) {
-                    onChanged(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text('Wanita'),
-              ],
+            RadioListTile(
+              value: 1,
+              groupValue: this.selected,
+              onChanged: (value) {
+                onChanged(value);
+              },
+              title: Text('Wanita'),
+              activeColor: Colors.red,
+              secondary: Icon(Icons.group),
             ),
           ],
         ),
