@@ -72,66 +72,41 @@ class HomeState extends State<Home> {
         padding: EdgeInsets.all(10),
         child: ListView(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Switch(
-                  value: this.settingValues[0],
-                  onChanged: (value) {
-                    onSwitch1Changed(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.settings[0]),
-              ],
+            SwitchListTile(
+              value: this.settingValues[0],
+              onChanged: (value) {
+                onSwitch1Changed(value);
+              },
+              title: Text(this.settings[0]),
+              secondary: Icon(Icons.airplanemode_active),
             ),
             Divider(),
-            Row(
-              children: <Widget>[
-                Switch(
-                  value: this.settingValues[1],
-                  onChanged: (value) {
-                    onSwitch2Changed(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.settings[1]),
-              ],
+            SwitchListTile(
+              value: this.settingValues[1],
+              onChanged: (value) {
+                onSwitch2Changed(value);
+              },
+              title: Text(this.settings[1]),
+              secondary: Icon(Icons.wifi),
             ),
             Divider(),
-            Row(
-              children: <Widget>[
-                Switch(
-                  value: this.settingValues[2],
-                  onChanged: (value) {
-                    onSwitch3Changed(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.settings[2]),
-              ],
+            SwitchListTile(
+              value: this.settingValues[2],
+              onChanged: (value) {
+                onSwitch3Changed(value);
+              },
+              title: Text(this.settings[2]),
+              secondary: Icon(Icons.data_usage),
             ),
             Divider(),
-            Row(
-              children: <Widget>[
-                Switch(
-                  value: this.settingValues[3],
-                  onChanged: (value) {
-                    onSwitch4Changed(value);
-                  },
-                ),
-                Container(
-                  width: 8.0,
-                ),
-                Text(this.settings[3]),
-              ],
+            SwitchListTile(
+              value: this.settingValues[3],
+              onChanged: (value) {
+                onSwitch4Changed(value);
+              },
+              title: Text(this.settings[3]),
+              secondary: Icon(Icons.bluetooth),
             ),
-            Divider(),
           ],
         ),
       ),
