@@ -21,33 +21,55 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  TimeOfDay time = TimeOfDay.now();
+  int selected = -1;
 
-  Future<Null> selectDate(BuildContext context) async {
-    final TimeOfDay selected = await showTimePicker(context: context, initialTime: this.time);
-    if (selected != null && selected != this.time) {
-      setState(() {
-        this.time = selected;
-      });
-    }
+  void onChanged(int value) {
+    setState(() {
+      this.selected = value;
+    });
+    print('Pilihan : ${this.selected}');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo ShowDatePicker()'),
+        title: Text('Demo Radio'),
       ),
       body: Container(
         padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
-            Text('Waktu yang dipilih : ${this.time.toString()}'),
-            RaisedButton(
-              child: Text('Pilih Waktu'),
-              onPressed: () {
-                selectDate(context);
-              },
+            Text('Jenis Kelamin: '),
+            Row(
+              children: <Widget>[
+                Radio(
+                  value: 88,
+                  groupValue: this.selected,
+                  onChanged: (value) {
+                    onChanged(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text('Pria'),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Radio(
+                  value: 99,
+                  groupValue: this.selected,
+                  onChanged: (value) {
+                    onChanged(value);
+                  },
+                ),
+                Container(
+                  width: 8.0,
+                ),
+                Text('Wanita'),
+              ],
             ),
           ],
         ),
