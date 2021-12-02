@@ -36,7 +36,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo ShowDatePicker()'),
+        title: Text('Demo ShowTimePicker()'),
       ),
       body: Container(
         padding: EdgeInsets.all(10),
