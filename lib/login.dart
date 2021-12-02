@@ -9,19 +9,22 @@ class LoginPage extends StatelessWidget {
       body: Container(
         color: ColorPalette.primaryColor,
         padding: EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconLogin(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
+        child: Form(
+          autovalidate: true,
+          child: ListView(
+            children: <Widget>[
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    _iconLogin(),
+                    _titleDescription(),
+                    _textField(),
+                    _buildButton(context),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -70,6 +73,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          validator: validatorUsername,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -94,6 +98,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          validator: validatorPassword,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -165,4 +170,18 @@ class LoginPage extends StatelessWidget {
       ],
     );
   }
+}
+
+String validatorUsername(String value) {
+  if (value.length < 3)
+    return 'Harus lebih 2 huruf';
+  else
+    return null;
+}
+
+String validatorPassword(String value) {
+  if (value.length <= 6)
+    return 'Harus lebih 6 huruf';
+  else
+    return null;
 }
