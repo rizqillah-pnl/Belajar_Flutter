@@ -150,14 +150,15 @@ class LoginPage extends StatelessWidget {
             fontSize: 12.0,
           ),
         ),
-        FlatButton(
-            child: Text(
-              "Register",
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, RegisterPage.routeName);
-            }),
+        TextButton(
+          child: Text(
+            "Register",
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, RegisterPage.routeName);
+          },
+        ),
       ],
     );
   }
