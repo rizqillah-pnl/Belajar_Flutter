@@ -176,7 +176,7 @@ class RegisterPage extends StatelessWidget {
             fontSize: 12.0,
           ),
         ),
-        TextButton(
+        ElevatedButton(
           child: Text(
             "Login",
             style: TextStyle(color: Colors.white),

@@ -150,7 +150,7 @@ class LoginPage extends StatelessWidget {
             fontSize: 12.0,
           ),
         ),
-        TextButton(
+        ElevatedButton(
           child: Text(
             "Register",
             style: TextStyle(color: Colors.white),
