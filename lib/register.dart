@@ -11,22 +11,19 @@ class RegisterPage extends StatelessWidget {
       body: Container(
         color: ColorPalette.primaryColor,
         padding: EdgeInsets.all(20.0),
-        child: Form(
-          autovalidate: true,
-          child: ListView(
-            children: <Widget>[
-              Center(
-                child: Column(
-                  children: <Widget>[
-                    _iconRegister(),
-                    _titleDescription(),
-                    _textField(),
-                    _buildButton(context),
-                  ],
-                ),
+        child: ListView(
+          children: <Widget>[
+            Center(
+              child: Column(
+                children: <Widget>[
+                  _iconRegister(),
+                  _titleDescription(),
+                  _textField(),
+                  _buildButton(context),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -74,79 +71,88 @@ class RegisterPage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 12.0),
         ),
-        TextFormField(
-          validator: validatorUsername,
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: ColorPalette.underlineTextField,
-                width: 1.5,
+        Form(
+          autovalidate: true,
+          child: TextFormField(
+            validator: validatorUsername,
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: ColorPalette.underlineTextField,
+                  width: 1.5,
+                ),
               ),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-                width: 3.0,
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                  width: 3.0,
+                ),
               ),
+              hintText: "Username",
+              hintStyle: TextStyle(color: ColorPalette.hintColor),
             ),
-            hintText: "Username",
-            hintStyle: TextStyle(color: ColorPalette.hintColor),
+            style: TextStyle(color: Colors.white),
+            autofocus: false,
           ),
-          style: TextStyle(color: Colors.white),
-          autofocus: false,
         ),
         Padding(
           padding: EdgeInsets.only(top: 12.0),
         ),
-        TextFormField(
-          validator: validatorPassword,
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: ColorPalette.underlineTextField,
-                width: 1.5,
+        Form(
+          autovalidate: true,
+          child: TextFormField(
+            validator: validatorPassword,
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: ColorPalette.underlineTextField,
+                  width: 1.5,
+                ),
               ),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-                width: 3.0,
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                  width: 3.0,
+                ),
               ),
+              hintText: "Password",
+              hintStyle: TextStyle(color: ColorPalette.hintColor),
             ),
-            hintText: "Password",
-            hintStyle: TextStyle(color: ColorPalette.hintColor),
+            style: TextStyle(color: Colors.white),
+            obscureText: true,
+            autofocus: false,
           ),
-          style: TextStyle(color: Colors.white),
-          obscureText: true,
-          autofocus: false,
         ),
         Padding(
           padding: EdgeInsets.only(top: 12.0),
         ),
-        TextFormField(
-          validator: validatorConfirm,
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: ColorPalette.underlineTextField,
-                width: 1.5,
+        Form(
+          autovalidate: true,
+          child: TextFormField(
+            validator: validatorConfirm,
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: ColorPalette.underlineTextField,
+                  width: 1.5,
+                ),
               ),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-                width: 3.0,
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                  width: 3.0,
+                ),
               ),
+              hintText: "Confirm Password",
+              hintStyle: TextStyle(color: ColorPalette.hintColor),
             ),
-            hintText: "Confirm Password",
-            hintStyle: TextStyle(color: ColorPalette.hintColor),
+            style: TextStyle(color: Colors.white),
+            obscureText: true,
+            autofocus: false,
           ),
-          style: TextStyle(color: Colors.white),
-          obscureText: true,
-          autofocus: false,
         ),
       ],
     );
