@@ -4,6 +4,16 @@ import 'package:helloworld/constants.dart';
 class RegisterPage extends StatelessWidget {
   static const routeName = "/registerPage";
   String password = null;
+  List akun = {
+    {
+      'ada',
+      'dasdsa'
+    },
+    {
+      'dssd',
+      'dssd'
+    }
+  };
 
   @override
   Widget build(BuildContext context) {
