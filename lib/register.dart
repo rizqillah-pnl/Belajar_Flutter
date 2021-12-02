@@ -3,6 +3,7 @@ import 'package:helloworld/constants.dart';
 
 class RegisterPage extends StatelessWidget {
   static const routeName = "/registerPage";
+  String password = null;
 
   @override
   Widget build(BuildContext context) {
@@ -10,19 +11,22 @@ class RegisterPage extends StatelessWidget {
       body: Container(
         color: ColorPalette.primaryColor,
         padding: EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconRegister(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
+        child: Form(
+          autovalidate: true,
+          child: ListView(
+            children: <Widget>[
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    _iconRegister(),
+                    _titleDescription(),
+                    _textField(),
+                    _buildButton(context),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -71,6 +75,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          validator: validatorNama,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -95,6 +100,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          validator: validatorPassword,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -120,6 +126,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          validator: validatorConfirm,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -190,5 +197,31 @@ class RegisterPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String validatorUsername(String value) {
+    if (value.length < 3)
+      return 'Harus lebih 2 huruf';
+    else
+      return null;
+  }
+
+  String validatorPassword(String value) {
+    if (value.length <= 6) return 'Harus lebih 6 huruf';
+
+    password = value;
+    return null;
+  }
+
+  String validatorConfirm(String value) {
+    if (value == password) {
+      if (value.length <= 6) {
+        return 'Harus lebih 6 huruf';
+      } else {
+        return null;
+      }
+    } else {
+      return 'Password Konfirmasi Salah';
+    }
   }
 }
