@@ -161,6 +161,7 @@ class RegisterPage extends StatelessWidget {
                 style: TextStyle(color: ColorPalette.primaryColor),
                 textAlign: TextAlign.center,
               ),
+              onPressed: () {},
             ),
             decoration: BoxDecoration(
               color: Colors.white,
