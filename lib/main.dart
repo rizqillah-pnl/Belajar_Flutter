@@ -14,7 +14,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Auto Validasi'),
+        title: Text('VALIDASI DATA'),
+        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorNama, //validator aama
+                  validator: validatorNama, 
                   decoration: InputDecoration(
                     labelText: 'Nama',
                     border: OutlineInputBorder(),
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorNomorInduk, //validator nomor induk
+                  validator: validatorNomorInduk, 
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     labelText: 'NIM',
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorEmail, //validator email
+                  validator: validatorEmail, 
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -64,7 +65,7 @@ class _MyAppState extends State<MyApp> {
 
 String validatorNama(String value) {
   if (value.length < 3)
-    return 'Nama harus lebih dari 2 huruf';
+    return 'Harus lebih 2 huruf';
   else
     return null;
 }
@@ -80,7 +81,7 @@ String validatorEmail(String value) {
   Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   RegExp regex = new RegExp(pattern);
   if (!regex.hasMatch(value))
-    return 'Masukan Email yang benar';
+    return 'Email harus berisi @, dan titik(.);
   else
     return null;
 }
