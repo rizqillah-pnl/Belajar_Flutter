@@ -129,10 +129,13 @@ class LoginPage extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             width: double.infinity,
-            child: Text(
-              "Login",
-              style: TextStyle(color: ColorPalette.primaryColor),
-              textAlign: TextAlign.center,
+            child: TextButton(
+              child: Text(
+                "Login",
+                style: TextStyle(color: ColorPalette.primaryColor),
+                textAlign: TextAlign.center,
+              ),
+              onPressed: () {},
             ),
             decoration: BoxDecoration(
               color: Colors.white,
