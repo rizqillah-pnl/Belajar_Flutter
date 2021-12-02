@@ -1,57 +1,86 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+      home: MyApp(),
+    ));
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Demo Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Home(),
-    );
-  }
+  _MyAppState createState() => _MyAppState();
 }
 
-class Home extends StatefulWidget {
-  @override
-  HomeState createState() => HomeState();
-}
-
-class HomeState extends State<Home> {
-  TimeOfDay time = TimeOfDay.now();
-
-  Future<Null> selectDate(BuildContext context) async {
-    final TimeOfDay selected = await showTimePicker(context: context, initialTime: this.time);
-    if (selected != null && selected != this.time) {
-      setState(() {
-        this.time = selected;
-      });
-    }
-  }
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo ShowDatePicker()'),
+        title: Text('Auto Validasi'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            Text('Waktu yang dipilih : ${this.time.toString()}'),
-            RaisedButton(
-              child: Text('Pilih Waktu'),
-              onPressed: () {
-                selectDate(context);
-              },
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          autovalidate: true,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: validatorNama, //validator aama
+                  decoration: InputDecoration(
+                    labelText: 'Nama',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: validatorNomorInduk, //validator nomor induk
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: 'NIM',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: validatorEmail, //validator email
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+String validatorNama(String value) {
+  if (value.length < 3)
+    return 'Nama harus lebih dari 2 huruf';
+  else
+    return null;
+}
+
+String validatorNomorInduk(String value) {
+  if (value.length != 11)
+    return 'Nomor Induk harus 11 digit';
+  else
+    return null;
+}
+
+String validatorEmail(String value) {
+  Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+  RegExp regex = new RegExp(pattern);
+  if (!regex.hasMatch(value))
+    return 'Masukan Email yang benar';
+  else
+    return null;
 }
