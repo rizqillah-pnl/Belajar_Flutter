@@ -155,10 +155,12 @@ class RegisterPage extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             width: double.infinity,
-            child: Text(
-              "Register",
-              style: TextStyle(color: ColorPalette.primaryColor),
-              textAlign: TextAlign.center,
+            child: TextButton(
+              child: Text(
+                "Register",
+                style: TextStyle(color: ColorPalette.primaryColor),
+                textAlign: TextAlign.center,
+              ),
             ),
             decoration: BoxDecoration(
               color: Colors.white,
