@@ -1,31 +1,56 @@
-// import 'package:flutter/material.dart';
-// import 'package:helloworld/login.dart';
-// import 'package:helloworld/register.dart';
+import 'package:flutter/material.dart';
 
-// void main() {
-//   runApp(
-//     MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "Login Register Page",
-//       initialRoute: "/",
-//       routes: {
-//         "/": (context) => LoginPage(),
-//         RegisterPage.routeName: (context) => RegisterPage(),
-//       },
-//     ),
-//   );
-// }
+void main() => runApp(MyApp());
 
-List akun = [
-  [
-    'ada',
-    'dasdsa'
-  ],
-  [
-    'dssd',
-    'dssd'
-  ]
-];
-void main() {
-  print(akun[0][0]);
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatefulWidget {
+  @override
+  HomeState createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  double sliderValue = 0.0;
+
+  void onChanged(double value) {
+    setState(() {
+      this.sliderValue = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Demo Slider'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: <Widget>[
+            Text('Nilai Aktif : ${sliderValue.round()}'),
+            Slider(
+              min: 0.0,
+              max: 100.0,
+              value: this.sliderValue,
+              onChanged: (value) {
+                onChanged(value);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

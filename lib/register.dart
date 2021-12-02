@@ -4,16 +4,8 @@ import 'package:helloworld/constants.dart';
 class RegisterPage extends StatelessWidget {
   static const routeName = "/registerPage";
   String password = null;
-  List akun = {
-    {
-      'ada',
-      'dasdsa'
-    },
-    {
-      'dssd',
-      'dssd'
-    }
-  };
+  String username = null;
+  List akun = null;
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +176,11 @@ class RegisterPage extends StatelessWidget {
                 style: TextStyle(color: ColorPalette.primaryColor),
                 textAlign: TextAlign.center,
               ),
-              onPressed: () {},
+              onPressed: () {
+                akun[0][0] = username;
+                akun[0][1] = password;
+                Navigator.pushNamed(context, "/");
+              },
             ),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -216,10 +212,10 @@ class RegisterPage extends StatelessWidget {
   }
 
   String validatorUsername(String value) {
-    if (value.length < 3)
-      return 'Harus lebih 2 huruf';
-    else
-      return null;
+    if (value.length < 3) return 'Harus lebih 2 huruf';
+
+    username = value;
+    return null;
   }
 
   String validatorPassword(String value) {
