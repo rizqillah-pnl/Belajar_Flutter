@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorNama, 
+                  validator: validatorNama,
                   decoration: InputDecoration(
                     labelText: 'Nama',
                     border: OutlineInputBorder(),
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorNomorInduk, 
+                  validator: validatorNomorInduk,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     labelText: 'NIM',
@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  validator: validatorEmail, 
+                  validator: validatorEmail,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -81,7 +81,7 @@ String validatorEmail(String value) {
   Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   RegExp regex = new RegExp(pattern);
   if (!regex.hasMatch(value))
-    return 'Email harus berisi @, dan titik(.);
+    return 'Email harus berisi @, dan titik(.)';
   else
     return null;
 }
