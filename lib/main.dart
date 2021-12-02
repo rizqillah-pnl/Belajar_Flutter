@@ -16,16 +16,16 @@
 //   );
 // }
 
-List akun = {
-  {
+List akun = [
+  [
     'ada',
     'dasdsa'
-  },
-  {
+  ],
+  [
     'dssd',
     'dssd'
-  }
-};
+  ]
+];
 void main() {
   print(akun[0][0]);
 }
