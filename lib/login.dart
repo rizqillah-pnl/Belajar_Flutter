@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
 
   Widget _iconLogin() {
     return Icon(
-      Icons.people,
+      Icons.account_circle,
       color: Colors.white,
       size: 150.0,
     );

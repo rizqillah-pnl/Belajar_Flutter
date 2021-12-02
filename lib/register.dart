@@ -30,7 +30,7 @@ class RegisterPage extends StatelessWidget {
 
   Widget _iconRegister() {
     return Icon(
-      Icons.people,
+      Icons.contact_mail_outlined,
       color: Colors.white,
       size: 150.0,
     );
