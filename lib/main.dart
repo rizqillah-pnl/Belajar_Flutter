@@ -71,12 +71,12 @@ String validatorNama(String value) {
 }
 
 String validatorNomorInduk(String value) {
-  if (value.contains(RegExp('[0-9]'))) if (value.length != 11)
+  if (value.contains(RegExp(r'0-9'))) if (value.length != 11)
     return 'Nomor Induk harus 11 digit';
   else
     return null;
   else
-    return 'Tidak boleh selain angka';
+    return 'tidak boleh selain angka';
 }
 
 String validatorEmail(String value) {
