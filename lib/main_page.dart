@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:helloworld/second_page.dart';
+import 'auth_services.dart';
 
 class MainPage extends StatelessWidget {
+  final User user;
+  MainPage(this.user);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,13 +17,16 @@ class MainPage extends StatelessWidget {
           backgroundColor: Colors.red,
         ),
         body: Center(
-          child: ElevatedButton(
-            child: Text('Go to Second Page'),
-            onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                return SecondPage();
-              }));
-            },
+          child: Column(
+            children: <Widget>[
+              Text(user.uid),
+              ElevatedButton(
+                child: Text("Sign Out"),
+                onPressed: () async {
+                  await AuthServices.signOut();
+                },
+              ),
+            ],
           ),
         ),
       ),
