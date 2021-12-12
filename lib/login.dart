@@ -76,6 +76,7 @@ class LoginPage extends StatelessWidget {
           autovalidate: true,
           child: TextFormField(
             validator: validatorUsername,
+            controller: user,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
@@ -104,6 +105,7 @@ class LoginPage extends StatelessWidget {
           autovalidate: true,
           child: TextFormField(
             validator: validatorPassword,
+            controller: password1,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
@@ -146,7 +148,9 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(color: ColorPalette.primaryColor),
                 textAlign: TextAlign.center,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                await AuthServices.signIn(user.text, password1.text);
+              },
             ),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -165,14 +169,13 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         TextButton(
-          child: Text(
-            "Register",
-            style: TextStyle(color: Colors.white),
-          ),
-          onPressed: () async {
-            await AuthServices.signIn(user.text, password1.text);
-          },
-        ),
+            child: Text(
+              "Register",
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, "/registerPage");
+            }),
       ],
     );
   }
