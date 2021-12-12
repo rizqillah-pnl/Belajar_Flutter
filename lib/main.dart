@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'wrapper.dart';
-import 'package:provider/provider.dart';
-import 'package:helloworld/auth_services.dart';
+import 'package:helloworld/login.dart';
+import 'package:helloworld/register.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return StreamProvider.value(
-      initialData: null,
-      value: AuthServices.firebaseUserStream,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Wrapper(),
-      ),
-    );
-  }
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Login Register Page",
+      initialRoute: "/",
+      routes: {
+        "/": (context) => LoginPage(),
+        RegisterPage.routeName: (context) => RegisterPage(),
+      },
+    ),
+  );
 }

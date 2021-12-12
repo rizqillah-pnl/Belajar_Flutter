@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/constants.dart';
+import 'constants.dart';
+import 'auth_services.dart';
 
 class RegisterPage extends StatelessWidget {
+  TextEditingController user = TextEditingController(text: "");
+  TextEditingController password1 = TextEditingController(text: "");
+  TextEditingController password2 = TextEditingController(text: "");
   static const routeName = "/registerPage";
   String password = null;
   String username = null;
@@ -77,6 +81,7 @@ class RegisterPage extends StatelessWidget {
           autovalidate: true,
           child: TextFormField(
             validator: validatorUsername,
+            controller: user,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
@@ -105,6 +110,7 @@ class RegisterPage extends StatelessWidget {
           autovalidate: true,
           child: TextFormField(
             validator: validatorPassword,
+            controller: password1,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
@@ -134,6 +140,7 @@ class RegisterPage extends StatelessWidget {
           autovalidate: true,
           child: TextFormField(
             validator: validatorConfirm,
+            controller: password2,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
@@ -176,10 +183,8 @@ class RegisterPage extends StatelessWidget {
                 style: TextStyle(color: ColorPalette.primaryColor),
                 textAlign: TextAlign.center,
               ),
-              onPressed: () {
-                akun[0][0] = username;
-                akun[0][1] = password;
-                Navigator.pushNamed(context, "/");
+              onPressed: () async {
+                await AuthServices.signUp(user.text, password1.text);
               },
             ),
             decoration: BoxDecoration(

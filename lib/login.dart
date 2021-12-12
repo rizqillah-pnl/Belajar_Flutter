@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/constants.dart';
-import 'package:helloworld/register.dart';
+import 'constants.dart';
+import 'register.dart';
+import 'auth_services.dart';
 
 class LoginPage extends StatelessWidget {
+  TextEditingController user = TextEditingController(text: "");
+  TextEditingController password1 = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,8 +169,8 @@ class LoginPage extends StatelessWidget {
             "Register",
             style: TextStyle(color: Colors.white),
           ),
-          onPressed: () {
-            Navigator.pushNamed(context, RegisterPage.routeName);
+          onPressed: () async {
+            await AuthServices.signIn(user.text, password1.text);
           },
         ),
       ],
