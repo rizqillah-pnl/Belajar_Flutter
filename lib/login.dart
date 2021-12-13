@@ -169,13 +169,14 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         TextButton(
-            child: Text(
-              "Register",
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, "/registerPage");
-            }),
+          child: Text(
+            "Register",
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, "/registerPage");
+          },
+        ),
       ],
     );
   }
@@ -189,8 +190,8 @@ String validatorUsername(String value) {
 }
 
 String validatorPassword(String value) {
-  if (value.length <= 6)
-    return 'Harus lebih 6 huruf';
+  if (value.length <= 5)
+    return 'Harus lebih 5 huruf';
   else
     return null;
 }

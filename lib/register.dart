@@ -224,7 +224,7 @@ class RegisterPage extends StatelessWidget {
   }
 
   String validatorPassword(String value) {
-    if (value.length <= 6) return 'Harus lebih 6 huruf';
+    if (value.length <= 5) return 'Harus lebih 5 huruf';
 
     password = value;
     return null;
@@ -232,8 +232,8 @@ class RegisterPage extends StatelessWidget {
 
   String validatorConfirm(String value) {
     if (value == password) {
-      if (value.length <= 6) {
-        return 'Harus lebih 6 huruf';
+      if (value.length <= 5) {
+        return 'Harus lebih 5 huruf';
       } else {
         return null;
       }
