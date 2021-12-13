@@ -81,7 +81,7 @@ String validatorNama(String value) {
 }
 
 String validatorNomorInduk(String value) {
-  if (value.length >= 11 && value.length <= 20)
+  if (value.length <= 20 && value.length >= 11)
     return 'Nomor Induk harus diatas 11 dan dibawah 20 digit';
   else
     return null;
