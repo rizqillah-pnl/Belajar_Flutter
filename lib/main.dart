@@ -81,10 +81,10 @@ String validatorNama(String value) {
 }
 
 String validatorNomorInduk(String value) {
-  if (value.length >= 11 && value.length <= 20)
+  if (value.length >= 10 && value.length <= 20)
     return null;
   else
-    return 'Nomor Induk harus diatas 11 digit dan dibawah 20 digit';
+    return 'Nomor Induk harus diatas 10 digit dan dibawah 20 digit';
 }
 
 String validatorEmail(String value) {
