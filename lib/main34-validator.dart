@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() {
+  runApp(
+    MaterialApp(
       home: MyApp(),
-    ));
+    ),
+  );
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -19,12 +23,12 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Form(
-          autovalidate: true,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorNama,
                   decoration: InputDecoration(
@@ -33,8 +37,11 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorNomorInduk,
                   keyboardType: TextInputType.number,
@@ -44,8 +51,11 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorEmail,
                   keyboardType: TextInputType.emailAddress,
@@ -55,8 +65,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -71,17 +81,17 @@ String validatorNama(String value) {
 }
 
 String validatorNomorInduk(String value) {
-  if (value.length != 11)
-    return 'Nomor Induk harus 11 digit';
-  else
+  if (value.length >= 10 && value.length <= 20)
     return null;
+  else
+    return 'Nomor Induk harus diatas 10 digit dan dibawah 20 digit';
 }
 
 String validatorEmail(String value) {
   Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   RegExp regex = new RegExp(pattern);
   if (!regex.hasMatch(value))
-    return 'Email harus berisi @, dan titik(.)';
+    return 'Email harus berisi @ dan titik(.)';
   else
     return null;
 }
