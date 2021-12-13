@@ -23,12 +23,12 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Form(
-          autovalidate: true,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorNama,
                   decoration: InputDecoration(
@@ -37,8 +37,11 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorNomorInduk,
                   keyboardType: TextInputType.number,
@@ -48,8 +51,11 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                autovalidate: true,
                 child: TextFormField(
                   validator: validatorEmail,
                   keyboardType: TextInputType.emailAddress,
@@ -59,8 +65,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -75,8 +81,8 @@ String validatorNama(String value) {
 }
 
 String validatorNomorInduk(String value) {
-  if (value.length != 11)
-    return 'Nomor Induk harus 11 digit';
+  if (value.length >= 11 && value.length <= 20)
+    return 'Nomor Induk harus diatas 11 dan dibawah 20 digit';
   else
     return null;
 }
@@ -85,7 +91,7 @@ String validatorEmail(String value) {
   Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   RegExp regex = new RegExp(pattern);
   if (!regex.hasMatch(value))
-    return 'Email harus berisi @, dan titik(.)';
+    return 'Email harus berisi @ dan titik(.)';
   else
     return null;
 }
