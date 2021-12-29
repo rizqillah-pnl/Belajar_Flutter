@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
-                autovalidate: true,
+                autovalidateMode: AutovalidateMode.always,
                 child: TextFormField(
                   validator: validatorNama,
                   decoration: InputDecoration(
@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
-                autovalidate: true,
+                autovalidateMode: AutovalidateMode.always,
                 child: TextFormField(
                   validator: validatorNomorInduk,
                   keyboardType: TextInputType.number,
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
-                autovalidate: true,
+                autovalidateMode: AutovalidateMode.always,
                 child: TextFormField(
                   validator: validatorEmail,
                   keyboardType: TextInputType.emailAddress,

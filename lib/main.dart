@@ -84,7 +84,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorUsername,
             controller: user,
@@ -113,7 +113,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorPassword,
             controller: password1,
@@ -288,7 +288,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorUsername,
             controller: user,
@@ -317,7 +317,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorPassword,
             controller: password1,
@@ -347,7 +347,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorConfirm,
             controller: password2,
